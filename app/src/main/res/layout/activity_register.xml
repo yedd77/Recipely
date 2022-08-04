@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/regPageTop"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:fontFamily="@font/roboto"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/regPage2Top"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/loginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/inputtextlogin"
+        android:drawableStart="@drawable/user_icon_vector"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/emailAddress"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"/>
+
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/regPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/pass"
+        android:drawableStart="@drawable/pass_icon_vector"
+        android:drawablePadding="10dp"
+        android:background="@drawable/inputtextlogin"
+        android:padding="10dp"
+        android:fontFamily="@font/roboto"
+        android:layout_weight="0"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/regPassConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/cPass"
+        android:drawableStart="@drawable/pass_icon_vector"
+        android:drawablePadding="10dp"
+        android:background="@drawable/inputtextlogin"
+        android:padding="10dp"
+        android:fontFamily="@font/roboto"
+        android:layout_weight="0" />
+
+    <Button
+        android:id="@+id/createAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create"
+        android:fontFamily="@font/roboto"
+        android:layout_weight="0"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonbg"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom
+"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/haveAcc"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/signInPage"
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:text="@string/signIn"
+            android:textColor="#FF5D36"/>
+    </LinearLayout>
+</LinearLayout>
