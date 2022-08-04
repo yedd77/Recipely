@@ -47,13 +47,31 @@
     <string name="dairy">Dairy</string>
     <string name="Eggs">Eggs</string>
     <string name="Meat">Meat</string>
+    <string name="VegetableTxt">Select the ingredient that you have</string>
+
+    <!-- Ingredient Vegetable-->
+    <string name="garlic">Garlic</string>
+    <string name="onion">Onion</string>
+    <string name="lettuce">Lettuce</string>
+    <string name="bellPep">Bell Pepper</string>
+    <string name="tomato">Tomato</string>
+    <string name="CTomato">Cherry Tomato</string>
+    <string name="broccoli">Broccoli</string>
+    <string name="chili">Chili</string>
+    <string name="BEChilli">Bird Eye Chili</string>
+    <string name="greenChilli">Green Chili</string>
+
+    <!--Add to ingredient function-->
+    <string name="addItem">Add item into fridge</string>
+    <string name="item">0 item</string>
+    <string name="add">Add</string>
+
     <string name="title_activity_vegetables_ingred">vegetables_ingred</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
