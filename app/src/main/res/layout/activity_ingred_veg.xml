@@ -41,21 +41,110 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/vegItemGarlic"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/garlic"
-                    android:textSize="16sp"/>
-            </LinearLayout>
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
 
+                <TextView
+                    android:id="@+id/vegItemOnion"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/onion"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lettuce"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bellPep"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tomato"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/broccoli"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CTomato"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chili"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -86,6 +175,7 @@
                 android:text="@string/addItem"/>
 
             <TextView
+                android:id="@+id/itemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -105,6 +195,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/addBtn"
                 android:background="@drawable/googlebtnbg">
 
                 <TextView

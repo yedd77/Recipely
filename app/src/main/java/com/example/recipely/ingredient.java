@@ -1,5 +1,6 @@
 package com.example.recipely;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +61,16 @@ public class ingredient extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ingredient, container, false);
+        View view = inflater.inflate(R.layout.fragment_ingredient, container, false);
+
+        LinearLayout vegetableBtn = (LinearLayout) view.findViewById(R.id.ingredientVegetablesBtn);
+
+        //listener for vegetable ingredient category
+        vegetableBtn.setOnClickListener(v -> {
+            Intent VegetablePage = new Intent(getActivity(), ingred_veg.class);
+            startActivity(VegetablePage);
+        });
+
+        return view;
     }
 }
