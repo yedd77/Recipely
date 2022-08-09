@@ -74,9 +74,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/vegetable"/>
 
                     <TextView
 
@@ -104,9 +104,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/fruit"/>
 
                     <TextView
 
@@ -143,9 +143,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/drinks"/>
 
                     <TextView
 
@@ -173,9 +173,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/hot_soup"/>
 
                     <TextView
 
@@ -211,9 +211,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/nuts"/>
 
                     <TextView
 
@@ -241,13 +241,13 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/mushroom"/>
 
                     <TextView
 
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:text="@string/mushroom"
                         android:textSize="16sp"
@@ -279,9 +279,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/berries"/>
 
                     <TextView
 
@@ -309,9 +309,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/dairy_products"/>
 
                     <TextView
 
@@ -347,9 +347,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/eggs"/>
 
                     <TextView
 
@@ -377,9 +377,9 @@
                     android:background="@drawable/ingredientbg">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/noimage"/>
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/meat"/>
 
                     <TextView
 
