@@ -2,12 +2,24 @@ package com.example.recipely;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +27,13 @@ import android.widget.LinearLayout;
  * create an instance of this fragment.
  */
 public class fridge extends Fragment {
+
+    private View ingredientView;
+    private RecyclerView myIngredientList;
+
+    private DatabaseReference fridgeRef;
+    private FirebaseAuth mAuth;
+    private String currentUserID;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,6 +79,82 @@ public class fridge extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fridge, container, false);
+        ingredientView = inflater.inflate(R.layout.fragment_fridge, container, false);
+        
+        myIngredientList = (RecyclerView) ingredientView.findViewById(R.id.ingredientList);
+        myIngredientList.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+
+        fridgeRef = FirebaseDatabase.getInstance().getReference().child("vegetable");
+        return ingredientView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerOptions<fridgeItem> options =
+                new FirebaseRecyclerOptions.Builder<fridgeItem>()
+                        .setQuery(fridgeRef , fridgeItem.class)
+                        .build();
+
+        FirebaseRecyclerAdapter<fridgeItem, fridgeViewHolder> adapter
+                = new FirebaseRecyclerAdapter<fridgeItem, fridgeViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull fridgeViewHolder holder, int position, @NonNull fridgeItem model) {
+
+                fridgeRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        fridgeItem data = snapshot.getValue(fridgeItem.class);
+                        int onionValue = data.getOnion();
+                        int garlicValue = data.getGarlic();
+
+                        if (onionValue == 1){
+                            holder.ingredName.setText("Onion");
+                            String onionExpiryDate = data.getOnionDateExpiry();
+                            holder.ingredExpiry.setText(onionExpiryDate);
+                        }
+
+                        if (garlicValue == 1){
+                            holder.ingredName.setText("Garlic");
+                            String garlicExpiryDate = data.getGarlicDateExpiry();
+                            holder.ingredExpiry.setText(garlicExpiryDate);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public fridgeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ingredientrecycle, parent, false);
+                fridgeViewHolder viewHolder = new fridgeViewHolder(view);
+                return viewHolder;
+            }
+        };
+
+        myIngredientList.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+    public static class fridgeViewHolder extends RecyclerView.ViewHolder{
+
+        TextView ingredName, ingredExpiry;
+
+        public fridgeViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            ingredName = itemView.findViewById(R.id.itemName);
+            ingredExpiry = itemView.findViewById(R.id.itemExpiry);
+        }
     }
 }

@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +58,25 @@ public class home extends Fragment {
         }
     }
 
+    //set hooks
+    ShimmerFrameLayout VS, HS;
+    LinearLayout LL;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View v =  inflater.inflate(R.layout.fragment_home, container, false);
+
+        HS = v.findViewById(R.id.horizontalShimmer);
+        VS = v.findViewById(R.id.verticalShimmer);
+        LL = v.findViewById(R.id.loadedHome);
+
+        LL.setVisibility(View.INVISIBLE);
+        HS.startShimmer();
+        VS.startShimmer();
+
+        return v;
     }
 }

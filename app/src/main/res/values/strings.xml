@@ -48,6 +48,11 @@
     <string name="Eggs">Eggs</string>
     <string name="Meat">Meat</string>
     <string name="VegetableTxt">Select the ingredient that you have</string>
+    <string name="expiry">Expiry: 30 days</string>
+    <string name="popular">Popular Recipes</string>
+    <string name="from">From Your Fridge</string>
+    <string name="see">See</string>
+    <string name="fridgetext">Ingredient on your fridge</string>
 
     <!-- Ingredient Vegetable-->
     <string name="garlic">Garlic</string>

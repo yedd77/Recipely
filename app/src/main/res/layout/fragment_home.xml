@@ -5,43 +5,82 @@
     android:layout_height="match_parent"
     tools:context=".home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/logogrey"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popular"
+            android:textSize="20sp"
+            android:layout_marginTop="18dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="32dp"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-            <ImageView
+            <com.facebook.shimmer.ShimmerFrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logogrey"
-                android:gravity="center"
-                android:layout_gravity="center"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/searchbarbg"
-                android:padding="3dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:elevation="3dp">
+                android:layout_marginStart="20dp"
+                android:id="@+id/horizontalShimmer">
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/search"
-                    android:background="@drawable/searchbarbg"
-                    android:textSize="16sp"
-                    android:drawableStart="@drawable/searchicon"
-                    android:drawablePadding="10dp"/>
-            </LinearLayout>
+                <include layout="@layout/horizontal_home_shimmer"/>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
         </LinearLayout>
-    </ScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/verticalShimmer">
+
+                <include layout="@layout/vertical_home_shimmer"/>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/loadedHome">
+
+        <include layout="@layout/homepage_loadeed"/>
+    </LinearLayout>
 
 </FrameLayout>

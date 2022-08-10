@@ -22,8 +22,8 @@ public class ingred_veg extends AppCompatActivity {
     LinearLayout addBtn;
     int item = 0;
     Boolean GarlicIsClicked = false, OnionIsClicked = false;
-    int garlicSelected, onionSelected;
-    String onionDateExpiry, garlicDateExpiry;
+    int garlicSelected, onionSelected; //tambah item
+    String onionDateExpiry, garlicDateExpiry; //tambah item
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,10 @@ public class ingred_veg extends AppCompatActivity {
         Garlic = (TextView) findViewById(R.id.vegItemGarlic);
         Onion = (TextView) findViewById(R.id.vegItemOnion);
         addBtn = (LinearLayout) findViewById(R.id.addBtn);
-        System.out.println("System set value of the item");
+        //declare item
+        System.out.println("System set value of the item"); //debug
 
+        //letak listener
         Onion.setOnClickListener(view -> {
             //check if the item has been clicked or not
             if (!OnionIsClicked){
