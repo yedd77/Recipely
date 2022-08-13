@@ -79,4 +79,9 @@
     <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!--account-->
+    <string name="clear">Clear my fridge</string>
+    <string name="myAcc">My Account</string>
+    <string name="accText">Setup your account here</string>
 </resources>

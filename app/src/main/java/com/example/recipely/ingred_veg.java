@@ -9,12 +9,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class ingred_veg extends AppCompatActivity {
 
@@ -22,8 +27,11 @@ public class ingred_veg extends AppCompatActivity {
     LinearLayout addBtn;
     int item = 0;
     Boolean GarlicIsClicked = false, OnionIsClicked = false;
-    int garlicSelected, onionSelected; //tambah item
-    String onionDateExpiry, garlicDateExpiry; //tambah item
+    int garlicSelected, onionSelected;
+    String onionDateExpiry, garlicDateExpiry;
+    String[] Ingredient = {"Garlic" , "Onion"}; //TODO - Tambah item kat sini
+
+    DatabaseReference dataRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +42,13 @@ public class ingred_veg extends AppCompatActivity {
         Garlic = (TextView) findViewById(R.id.vegItemGarlic);
         Onion = (TextView) findViewById(R.id.vegItemOnion);
         addBtn = (LinearLayout) findViewById(R.id.addBtn);
-        //declare item
-        System.out.println("System set value of the item"); //debug
 
-        //letak listener
+        dataRef = FirebaseDatabase.getInstance().getReference().child("Ingredient");
+
         Onion.setOnClickListener(view -> {
-            //check if the item has been clicked or not
+            //check if is not clicked, item counter will increase by 1,
+            // and the boolean will show the item has been clicked
+            // button properties will show the item has been clicked and changed color to orange
             if (!OnionIsClicked){
 
                 addItemCount();
@@ -55,7 +64,6 @@ public class ingred_veg extends AppCompatActivity {
 
         Garlic.setOnClickListener(view ->{
 
-            //check if the item has been clicked or not
             if (!GarlicIsClicked) {
 
                 addItemCount();
@@ -69,28 +77,47 @@ public class ingred_veg extends AppCompatActivity {
             }
         });
 
-        //listener to add item to database
+        //listener for adding item into db
         addBtn.setOnClickListener(v ->{
-            DAOvegetables daoVeg = new DAOvegetables();
             setExpiry();
             checkItem();
-            vegetable veg = new vegetable(garlicSelected , garlicDateExpiry, onionSelected, onionDateExpiry);
-            daoVeg.add(veg).addOnSuccessListener( suc ->{
-                Toast.makeText(this, "Item has been recorded", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(er->{
-                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-            });
 
+            for (int x=0; x<Ingredient.length; x++) {
+
+                int getItemValue = 0;
+                String getItemExpiry = "";
+
+                //TODO - Tambah item baru kat sini jugak
+                if (Objects.equals(Ingredient[x], "Garlic") && garlicSelected == 1) {
+                    getItemValue = garlicSelected;
+                    getItemExpiry = garlicDateExpiry;
+                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
+
+                } else if (Objects.equals(Ingredient[x], "Onion") && onionSelected == 1) {
+                    getItemValue = onionSelected;
+                    getItemExpiry = onionDateExpiry;
+                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
+                }
+            }
         });
+    }
+
+    private void addItemByIngredient(String IngredientName , int item , String Expiry) {
+        //Creating new hashmap for each item in the loop and add it into db
+        HashMap hm = new HashMap();
+        hm.put("Ingredient" , item);
+        hm.put("Expiry", Expiry);
+
+        dataRef.child(IngredientName).setValue(hm);
     }
 
     // method to set value of an item to boolean before sending it to database
     private void checkItem() {
 
         if (GarlicIsClicked) {
-            garlicSelected = 1;
+            garlicSelected = 1; // Button selected
         } else {
-            garlicSelected = 0;
+            garlicSelected = 0; //button not selected
         }
 
         if (OnionIsClicked) {
@@ -98,6 +125,8 @@ public class ingred_veg extends AppCompatActivity {
         } else {
             onionSelected = 0;
         }
+
+        //TODO - Tambah item baru kat sini
     }
 
     private void setExpiry() {
@@ -106,6 +135,7 @@ public class ingred_veg extends AppCompatActivity {
         // expiry days is estimated if user store the ingredient in suitable places
         int onionExpiry = 90;
         int garlicExpiry = 90;
+        //TODO - Tambah item baru kat sini
 
         //set date time formatter
         //DOCS: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
@@ -118,18 +148,17 @@ public class ingred_veg extends AppCompatActivity {
         //set the date as string
         onionDateExpiry = String.valueOf(dtf.format(onionDate));
         garlicDateExpiry = String.valueOf(dtf.format(GarlicDate));
+        //TODO - Tambah item baru kat sini
     }
 
     //update item counter when remove an item
     public void minusItemCount() {
-        System.out.println("y");
         item--;
         itemCount.setText(String.format(item + " Item"));
     }
 
     //update item counter when adding an item
     public void addItemCount() {
-        System.out.println("x");
         item++;
         itemCount.setText(String.format(item + " Item"));
     }
@@ -145,6 +174,4 @@ public class ingred_veg extends AppCompatActivity {
         item.setBackground(getResources().getDrawable(R.drawable.ingridient_itembg_clicked));
         item.setTextColor(getResources().getColor(R.color.white));
     }
-
-
 }

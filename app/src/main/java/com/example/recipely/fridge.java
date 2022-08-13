@@ -87,7 +87,7 @@ public class fridge extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
 
-        fridgeRef = FirebaseDatabase.getInstance().getReference().child("vegetable");
+        fridgeRef = FirebaseDatabase.getInstance().getReference().child("Ingredient");
         return ingredientView;
     }
 
@@ -109,14 +109,8 @@ public class fridge extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         fridgeItem data = snapshot.getValue(fridgeItem.class);
-                        int onionValue = data.getOnion();
+                        //TODO
                         int garlicValue = data.getGarlic();
-
-                        if (onionValue == 1){
-                            holder.ingredName.setText("Onion");
-                            String onionExpiryDate = data.getOnionDateExpiry();
-                            holder.ingredExpiry.setText(onionExpiryDate);
-                        }
 
                         if (garlicValue == 1){
                             holder.ingredName.setText("Garlic");

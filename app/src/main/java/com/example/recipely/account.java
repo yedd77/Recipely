@@ -7,6 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +63,23 @@ public class account extends Fragment {
         }
     }
 
+    FirebaseUser user;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        String emailUser = "";
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View view =  inflater.inflate(R.layout.fragment_account, container, false);
+
+        //set user email on page
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        for (UserInfo profile : user.getProviderData()){
+            emailUser = profile.getEmail();
+        }
+        TextView email = (TextView) view.findViewById(R.id.emailAddress);
+        email.setText(emailUser);
+        return view;
     }
 }

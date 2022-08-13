@@ -6,14 +6,14 @@
         android:id="@+id/botNavBarHome"/>
     <item
         android:title="@string/ingred"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/searchicon"
         android:id="@+id/botNavBarIngred"/>
     <item
         android:title="@string/fridge"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/fridge_icon"
         android:id="@+id/botNavBarFridge"/>
     <item
         android:title="@string/acc"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/account_vector_focus"
         android:id="@+id/botNavBarAcc"/>
 </menu>
