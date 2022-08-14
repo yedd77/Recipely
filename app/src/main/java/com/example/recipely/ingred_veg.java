@@ -32,6 +32,8 @@ public class ingred_veg extends AppCompatActivity {
     String[] Ingredient = {"Garlic" , "Onion"}; //TODO - Tambah item kat sini
 
     DatabaseReference dataRef;
+    String currentUserID;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,9 @@ public class ingred_veg extends AppCompatActivity {
         Onion = (TextView) findViewById(R.id.vegItemOnion);
         addBtn = (LinearLayout) findViewById(R.id.addBtn);
 
-        dataRef = FirebaseDatabase.getInstance().getReference().child("Ingredient");
+        mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+        dataRef = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUserID);
 
         Onion.setOnClickListener(view -> {
             //check if is not clicked, item counter will increase by 1,

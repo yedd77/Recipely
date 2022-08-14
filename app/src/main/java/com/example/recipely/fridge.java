@@ -87,7 +87,7 @@ public class fridge extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
 
-        fridgeRef = FirebaseDatabase.getInstance().getReference().child("Ingredient");
+        fridgeRef = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUserID);
         return ingredientView;
     }
 
@@ -105,17 +105,27 @@ public class fridge extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull fridgeViewHolder holder, int position, @NonNull fridgeItem model) {
 
-                fridgeRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                fridgeRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        fridgeItem data = snapshot.getValue(fridgeItem.class);
-                        //TODO
-                        int garlicValue = data.getGarlic();
 
-                        if (garlicValue == 1){
-                            holder.ingredName.setText("Garlic");
-                            String garlicExpiryDate = data.getGarlicDateExpiry();
-                            holder.ingredExpiry.setText(garlicExpiryDate);
+                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                            if(snapshot.child("Garlic").exists()){
+                                String itemName = "Garlic";
+                                String itemExpiry = snapshot.child("Garlic").child("Expiry").getValue().toString();
+
+                                holder.ingredName.setText(itemName);
+                                holder.ingredExpiry.setText(itemExpiry);
+
+                            }
+                            else if(snapshot.child("Onion").exists()){
+                                String itemName = "Onion";
+                                String itemExpiry = snapshot.child("Onion").child("Expiry").getValue().toString();
+
+                                holder.ingredName.setText(itemName);
+                                holder.ingredExpiry.setText(itemExpiry);
+                            }
                         }
                     }
 
@@ -131,8 +141,7 @@ public class fridge extends Fragment {
             public fridgeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ingredientrecycle, parent, false);
-                fridgeViewHolder viewHolder = new fridgeViewHolder(view);
-                return viewHolder;
+                return new fridgeViewHolder(view);
             }
         };
 
