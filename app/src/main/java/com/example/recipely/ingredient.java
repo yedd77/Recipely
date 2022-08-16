@@ -30,14 +30,6 @@ public class ingredient extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ingredient.
-     */
     // TODO: Rename and change types and number of parameters
     public static ingredient newInstance(String param1, String param2) {
         ingredient fragment = new ingredient();
@@ -64,11 +56,17 @@ public class ingredient extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ingredient, container, false);
 
         LinearLayout vegetableBtn = (LinearLayout) view.findViewById(R.id.ingredientVegetablesBtn);
+        LinearLayout ingredientNutsBtn = (LinearLayout) view.findViewById(R.id.ingredientNutsBtn);
 
         //listener for vegetable ingredient category
         vegetableBtn.setOnClickListener(v -> {
             Intent VegetablePage = new Intent(getActivity(), ingred_veg.class);
             startActivity(VegetablePage);
+        });
+
+        ingredientNutsBtn.setOnClickListener(v ->{
+            Intent nutsPage = new Intent(getActivity(), ingred_nuts.class);
+            startActivity(nutsPage);
         });
 
         return view;

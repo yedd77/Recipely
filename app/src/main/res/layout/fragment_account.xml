@@ -75,6 +75,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/clearFridge"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -100,6 +101,32 @@
                     android:layout_marginEnd="30dp"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedback"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/go"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="30dp"/>
+            </LinearLayout>
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -108,7 +135,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="App Version: V1.0.003"
+                android:text="App Version: V1.0.005 Stable"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto"
                 android:textSize="12sp"

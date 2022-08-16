@@ -1,5 +1,6 @@
 package com.example.recipely;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.L;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
@@ -72,6 +74,9 @@ public class account extends Fragment {
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_account, container, false);
+        LinearLayout AccountPage = (LinearLayout) view.findViewById(R.id.AccountPage);
+        LinearLayout clearFridge = (LinearLayout) view.findViewById(R.id.clearFridge);
+        LinearLayout feedback = (LinearLayout) view.findViewById(R.id.feedback);
 
         //set user email on page
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -80,6 +85,25 @@ public class account extends Fragment {
         }
         TextView email = (TextView) view.findViewById(R.id.emailAddress);
         email.setText(emailUser);
+
+        //Intent to account page
+        AccountPage.setOnClickListener(v ->{
+            Intent myAccountPage = new Intent(getActivity(), Account_account_node.class);
+            startActivity(myAccountPage);
+         });
+
+        //Delete intent to delete all the item in database
+        clearFridge.setOnClickListener(v ->{
+            Intent clearFridgePage = new Intent(getActivity(), clearFridge.class);
+            startActivity(clearFridgePage);
+        });
+
+        //Intent to goto feedback page
+        feedback.setOnClickListener(v ->{
+            Intent feedbackPage = new Intent(getActivity(), feedback.class);
+            startActivity(feedbackPage);
+        });
+
         return view;
     }
 }

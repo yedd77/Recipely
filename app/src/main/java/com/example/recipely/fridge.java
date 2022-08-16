@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -20,6 +21,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.EventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -88,12 +99,14 @@ public class fridge extends Fragment {
         currentUserID = mAuth.getCurrentUser().getUid();
 
         fridgeRef = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUserID);
+
         return ingredientView;
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
 
         FirebaseRecyclerOptions<fridgeItem> options =
                 new FirebaseRecyclerOptions.Builder<fridgeItem>()
@@ -105,35 +118,16 @@ public class fridge extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull fridgeViewHolder holder, int position, @NonNull fridgeItem model) {
 
-                fridgeRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String itemExpiry = model.getExpiry();
+                String itemName = getRef(position).getKey();
 
-                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                holder.ingredName.setText(itemName);
+                holder.ingredExpiry.setText(itemExpiry);
 
-                            if(snapshot.child("Garlic").exists()){
-                                String itemName = "Garlic";
-                                String itemExpiry = snapshot.child("Garlic").child("Expiry").getValue().toString();
-
-                                holder.ingredName.setText(itemName);
-                                holder.ingredExpiry.setText(itemExpiry);
-
-                            }
-                            else if(snapshot.child("Onion").exists()){
-                                String itemName = "Onion";
-                                String itemExpiry = snapshot.child("Onion").child("Expiry").getValue().toString();
-
-                                holder.ingredName.setText(itemName);
-                                holder.ingredExpiry.setText(itemExpiry);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
+                holder.deleteBtn.setOnClickListener(v ->{
+                    fridgeRef.child(getRef(position).getKey()).removeValue();
                 });
+
             }
 
             @NonNull
@@ -141,7 +135,8 @@ public class fridge extends Fragment {
             public fridgeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ingredientrecycle, parent, false);
-                return new fridgeViewHolder(view);
+                fridgeViewHolder viewHolder = new fridgeViewHolder(view);
+                return viewHolder;
             }
         };
 
@@ -152,12 +147,16 @@ public class fridge extends Fragment {
     public static class fridgeViewHolder extends RecyclerView.ViewHolder{
 
         TextView ingredName, ingredExpiry;
+        LinearLayout deleteBtn;
 
         public fridgeViewHolder(@NonNull View itemView) {
             super(itemView);
 
             ingredName = itemView.findViewById(R.id.itemName);
             ingredExpiry = itemView.findViewById(R.id.itemExpiry);
+
+            //set button to delete an item
+            deleteBtn = itemView.findViewById(R.id.deleteItem);
         }
     }
 }

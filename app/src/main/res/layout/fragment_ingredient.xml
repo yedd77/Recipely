@@ -6,9 +6,7 @@
     tools:context=".ingredient"
     android:padding="32dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,368 +27,262 @@
                 android:textSize="20sp"
                 android:fontFamily="@font/roboto"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/searchbarbg"
-                android:padding="3dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
+            <ScrollView
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:elevation="5dp">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/searchIngredient"
-                    android:background="@drawable/searchbarbg"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-                    android:drawableStart="@drawable/searchicon"
-                    android:drawablePadding="10dp"/>
-            </LinearLayout>
-
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:weightSum="2">
+                android:scrollbars="none">
 
                 <LinearLayout
-                    android:id="@+id/ingredientVegetablesBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/vegetable"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/vegetable"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
 
-                <LinearLayout
-                    android:id="@+id/ingredientFruitBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
+                        <LinearLayout
+                            android:id="@+id/ingredientVegetablesBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/fruit"/>
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/vegetable"/>
 
-                    <TextView
+                            <TextView
 
-                        android:layout_width="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/vegetable"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ingredientFruitBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/fruit"/>
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/fruit"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/fruit"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
 
-            </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ingredientNutsBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:weightSum="2">
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/nuts"/>
 
-                <LinearLayout
-                    android:id="@+id/ingredientBeveragesBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
+                            <TextView
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/drinks"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/nuts"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
 
-                    <TextView
+                        <LinearLayout
+                            android:id="@+id/ingredientMushroomBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
 
-                        android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/mushroom"/>
+
+                            <TextView
+
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:text="@string/mushroom"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/beverage"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
 
-                <LinearLayout
-                    android:id="@+id/ingredientStockBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
+                        <LinearLayout
+                            android:id="@+id/ingredientMeatSubBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/hot_soup"/>
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/meat"/>
 
-                    <TextView
+                            <TextView
 
-                        android:layout_width="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Meat"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ingredientDairyBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/dairy_products"/>
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/dairy"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/soup"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/ingredientEggBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:elevation="3dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="10dp"
+                            android:background="@drawable/ingredientbg">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/eggs"/>
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Eggs"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="10dp"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:id="@+id/ingredientNutsBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/nuts"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/nuts"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ingredientMushroomBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/mushroom"/>
-
-                    <TextView
-
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:text="@string/mushroom"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:id="@+id/ingredientBerriesBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/berries"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/berries"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ingredientDairyBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/dairy_products"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/dairy"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:id="@+id/ingredientEggBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/eggs"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/Eggs"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ingredientMeatSubBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:elevation="3dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="10dp"
-                    android:background="@drawable/ingredientbg">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/meat"/>
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/Meat"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </LinearLayout>
+            </ScrollView>
         </LinearLayout>
-    </ScrollView>
 </FrameLayout>

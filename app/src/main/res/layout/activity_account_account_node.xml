@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Account_account_node"
-    android:orientation="vertical"
-    android:padding="32dp">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,14 +14,67 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#FF5D36"
-        android:fontFamily="@font/roboto"/>
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/accText"
         android:textSize="20sp"
-        android:fontFamily="@font/roboto"/>
+        android:fontFamily="@font/roboto"
+        android:layout_marginStart="32dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_marginTop="30dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="18sp"
+            android:layout_marginEnd="7dp"/>
+
+        <TextView
+            android:id="@+id/emailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailAddress"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/changePassBtn"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/change"
+        android:background="@drawable/buttonbg"
+        android:fontFamily="@font/roboto"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/LogOutBtn"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:background="@drawable/buttonbg"
+        android:fontFamily="@font/roboto"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:layout_marginBottom="32dp"/>
 </LinearLayout>

@@ -53,6 +53,7 @@
     <string name="from">From Your Fridge</string>
     <string name="see">See</string>
     <string name="fridgetext">Ingredient on your fridge</string>
+    <string name="hint">Tips: If you add an existing ingredient on your fridge, we will detect as you resupply your ingredient. The expiry date will be reset</string>
 
     <!-- Ingredient Vegetable-->
     <string name="garlic">Garlic</string>
@@ -63,8 +64,45 @@
     <string name="CTomato">Cherry Tomato</string>
     <string name="broccoli">Broccoli</string>
     <string name="chili">Chili</string>
+    <string name="carrot">Carrot</string>
+    <string name="beetroot">BeetRoot</string>
+    <string name="radish">Radish</string>
+    <string name="mangetout">MangeTout</string>
+    <string name="parsley">Parsley</string>
+    <string name="spinach">Spinach</string>
+    <string name="potato">Potato</string>
+    <string name="basil">Basil</string>
+    <string name="springonion">Spring Onion</string>
+    <string name="cayennepepper">Cayenne Pepper</string>
+    <string name="asparagus">Asparagus</string>
+    <string name="avocado">Avocado</string>
+    <string name="cabbage">Cabbage</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="celery">Celery</string>
+    <string name="cucumber">Cucumber</string>
+    <string name="corn">Corn</string>
+    <string name="fennel">Fennel</string>
+    <string name="parsnip">Parsnip</string>
+    <string name="peas">Peas</string>
+    <string name="pumpkin">Pumpkin</string>
+    <string name="swede">Swede</string>
+    <string name="turnip">Turnip</string>
     <string name="BEChilli">Bird Eye Chili</string>
     <string name="greenChilli">Green Chili</string>
+
+    <!--Ingredients Nuts-->
+    <string name="pistachios">Pistachios</string>
+    <string name="hazelnuts">Hezelnuts</string>
+    <string name="cashews">Cashews</string>
+    <string name="walnuts">Walnuts</string>
+    <string name="marconaalmonds">Marcona Almonds</string>
+    <string name="macdamia">Macadamia Nuts</string>
+    <string name="peanuts">Peanuts</string>
+    <string name="almonds">Almonds</string>
+    <string name="brazil">Brazil Nuts</string>
+    <string name="pine">Pine Nuts</string>
+    <string name="pecans">Pecans</string>
+
 
     <!--Add to ingredient function-->
     <string name="addItem">Add item into fridge</string>
@@ -84,4 +122,12 @@
     <string name="clear">Clear my fridge</string>
     <string name="myAcc">My Account</string>
     <string name="accText">Setup your account here</string>
+    <string name="email">Your Email :</string>
+    <string name="clearFr">We are going to take out all the item and clear your ingredient from your fridge</string>
+    <string name="ClearIng">Clear Ingredient</string>
+    <string name="change">Change Password</string>
+    <string name="feedback">Leave us feedback</string>
+    <string name="feedbackText">We would like to hear from you about our product. Let us know what we\'re getting right and what we can improve</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
 </resources>

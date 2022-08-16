@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -69,12 +70,13 @@ public class LoginActivity extends AppCompatActivity {
         String email = loginEmail.getText().toString();
         String pass = loginPass.getText().toString();
 
-        if(TextUtils.isEmpty(email)){
+        if(TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             loginEmail.setError("Email is required");
             loginEmail.requestFocus();
-        } else if (TextUtils.isEmpty(pass)){
+        } else if (TextUtils.isEmpty(pass)) {
             loginPass.setError("Password is required");
             loginPass.requestFocus();
+
         } else {
             mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
 

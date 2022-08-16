@@ -17,6 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".feedback"
+            android:exported="false" />
+        <activity
+            android:name=".clearFridge"
+            android:exported="false" />
+        <activity
+            android:name=".ingred_nuts"
+            android:exported="false" />
+        <activity
             android:name=".Account_account_node"
             android:exported="false" />
         <activity

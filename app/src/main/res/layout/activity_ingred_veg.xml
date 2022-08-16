@@ -31,6 +31,32 @@
         android:layout_marginEnd="32dp"
         android:layout_weight="0"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/hintbg"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bulb"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint"
+            android:textSize="14sp"
+            android:textColor="#F18800"
+            android:textAlignment="viewStart"/>
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -73,6 +99,7 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
+                    android:id="@+id/vegItemLettuce"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -89,6 +116,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/vegItemBellpepper"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -99,6 +127,7 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
+                    android:id="@+id/vegItemTomato"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -109,6 +138,7 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
+                    android:id="@+id/vegItemBroccoli"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -125,6 +155,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/vegItemCherrytomato"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -135,6 +166,7 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
+                    android:id="@+id/vegItemChili"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
@@ -144,7 +176,318 @@
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
+                <TextView
+                    android:id="@+id/vegItemCarrot"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/carrot"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemBeetroot"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beetroot"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemRadish"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radish"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemMangeTout"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mangetout"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemParsley"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parsley"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemSpinach"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spinach"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemCayennePepper"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cayennepepper"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemBasil"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/basil"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemSpringOnion"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/springonion"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemPotato"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/potato"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemAsparagus"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/asparagus"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemAvocado"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/avocado"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemCabbage"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cabbage"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemCauliflower"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cauliflower"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemCelery"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/celery"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemCucumber"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cucumber"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemCorn"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/corn"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemParsnip"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parsnip"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemFennel"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fennel"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemPeas"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/peas"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemPumpkin"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pumpkin"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/vegItemSwede"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/swede"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vegItemTurnip"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/turnip"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 
