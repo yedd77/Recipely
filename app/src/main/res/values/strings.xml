@@ -87,6 +87,17 @@
     <string name="pumpkin">Pumpkin</string>
     <string name="swede">Swede</string>
     <string name="turnip">Turnip</string>
+    <string name="button">Button</string>
+    <string name="cremini">Cremini</string>
+    <string name="portobello">Portobello</string>
+    <string name="shiitake">Shiitake</string>
+    <string name="oyster">Oyster</string>
+    <string name="porcini">Porcini</string>
+    <string name="morel">Morel</string>
+    <string name="enoki">Enoki</string>
+    <string name="chanterelle">Chanterelle</string>
+    <string name="maitake">Maitake</string>
+
     <string name="BEChilli">Bird Eye Chili</string>
     <string name="greenChilli">Green Chili</string>
 
@@ -103,12 +114,82 @@
     <string name="pine">Pine Nuts</string>
     <string name="pecans">Pecans</string>
 
+    <!--Ingredients Dairy-->
+    <string name="cheese">Cheese</string>
+    <string name="butter">Butter</string>
+    <string name="cream">Cream</string>
+    <string name="ghee">Ghee</string>
+    <string name="liquidmilk">Liquid Milk</string>
+    <string name="fermentedmilk">Fermented Milk</string>
+    <string name="condensedmilk">Condensed Milk</string>
+    <string name="evaporatedmilk">Evaporated Milk</string>
+    <string name="casein">Casein</string>
+    <string name="yogurt">Yogurt</string>
+
+    <!--Ingredients Meat-->
+    <string name="beef">Beef</string>
+    <string name="chicken">Chicken</string>
+    <string name="pork">Pork</string>
+    <string name="chorizo">Chorizo</string>
+    <string name="steak">Steak</string>
+    <string name="goat">Goat</string>
+    <string name="lamb">Lamb</string>
+    <string name="mutton">Mutton</string>
+    <string name="meatball">Meatball</string>
+    <string name="paultry">Paultry</string>
+    <string name="sausage">Sausage</string>
+
+    <!--Mushroom-->
+    <string name="portabello">Portabello Cap Mushroom</string>
+    <string name="canned">Canned Mushroom</string>
+    <string name="buttonM">Button Mushroom</string>
+    <string name="chesnut">Chestnut Mushroom</string>
+    <string name="Oyster">Oyster Mushroom</string>
+    <string name="whiteMush">White Mushroom</string>
+    <string name="babyB">Baby Bella Mushroom</string>
+    <string name="mixed">Mixed Mushroom</string>
+    <string name="porciniMush">Porcini Mushroom</string>
+    <string name="driedMush">Dried Mushroom</string>
+    <string name="brownMush">Brown Mushroom</string>
+    <string name="creminiMush">Cremini Mushroom</string>
+    <string name="Shiitake">Shiitake Mushroom</string>
+
+    <!--Seafood-->
+    <string name="seafood">Seafood</string>
+    <string name="artic">Artic Char</string>
+    <string name="Bream">Bream</string>
+    <string name="clams">Clams</string>
+    <string name="Cod">Cod</string>
+    <string name="Crab">Crab</string>
+    <string name="Crayfish">Crayfish</string>
+    <string name="Hake">Hake</string>
+    <string name="Haddock">Haddock</string>
+    <string name="Halibut">Halibut</string>
+    <string name="Lobster">Lobster</string>
+    <string name="Mackerel">Mackerel</string>
+    <string name="mahi">Mahi Mahi</string>
+    <string name="Monkfish">Monkfish</string>
+    <string name="Octopus">Octopus</string>
+    <string name="Oysteer">Oyster</string>
+    <string name="Plaice">Plaice</string>
+    <string name="Pollack">Pollack</string>
+    <string name="Prawns">Prawns</string>
+    <string name="Salmon">Salmon</string>
+    <string name="Sardine">Sardine</string>
+    <string name="Scallop">Scallop</string>
+    <string name="Seaweed">Seaweed</string>
+    <string name="Shrimp">Shrimp</string>
+    <string name="Squid">Squid</string>
+    <string name="Sturgeon">Sturgeon</string>
+    <string name="Tuna">Tuna</string>
+    <string name="Trout">Trout</string>
 
     <!--Add to ingredient function-->
     <string name="addItem">Add item into fridge</string>
     <string name="item">0 item</string>
     <string name="add">Add</string>
-
+    <string name="cantFind">Can\'t find your ingredient?</string>
+    <string name="cantText">Your ingredient might currently added by our team for next update. Try send us feedback on what ingredient you want us to add next.</string>
     <string name="title_activity_vegetables_ingred">vegetables_ingred</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -130,4 +211,7 @@
     <string name="feedbackText">We would like to hear from you about our product. Let us know what we\'re getting right and what we can improve</string>
     <string name="subject">Subject</string>
     <string name="message">Message</string>
+
+    <!--API-->
+    <string name="API">2ce0080ff51b4eaca278964e5d29ce1b</string>
 </resources>

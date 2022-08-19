@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ingred_nuts"
+    tools:context=".ingred_mushroom"
     android:orientation="vertical"
     android:weightSum="3">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nuts"
+        android:text="@string/mushroom"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#FF5D36"
@@ -77,112 +77,23 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemPistachio"
+                    android:id="@+id/mushroomItemShiitake"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pistachios"
+                    android:text="@string/Shiitake"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemHazelnut"
+                    android:id="@+id/mushroomItemCremini"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hazelnuts"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemCashew"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cashews"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/nutsItemWalnut"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/walnuts"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemPine"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pine"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemPecan"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pecans"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/nutsItemPeanut"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/peanuts"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemAlmond"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/almonds"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemBrazil"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/brazil"
+                    android:text="@string/creminiMush"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
@@ -195,31 +106,154 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemMarcona"
+                    android:id="@+id/mushroomItemBrown"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/marconaalmonds"
+                    android:text="@string/brownMush"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemMacadamia"
+                    android:id="@+id/mushroomItemDriedMushroom"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/macdamia"
+                    android:text="@string/driedMush"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mushroomItemPorcini"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/porciniMush"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/mushroomItemMixedMushroom"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mixed"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/mushroomItemBabyBella"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/babyB"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
 
+                <TextView
+                    android:id="@+id/mushroomItemWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/whiteMush"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mushroomItemOysterMushroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/oyster"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mushroomItemChestnut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/chesnut"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mushroomItemButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/buttonM"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mushroomItemCannedMushroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/canned"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/mushroomItemPortabelloCap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/ingredient_itembg"
+                android:elevation="3dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/portabello"
+                android:textSize="14sp" />
         </LinearLayout>
     </ScrollView>
 
@@ -233,7 +267,8 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:weightSum="3"
-        android:background="@drawable/additembg">
+        android:background="@drawable/additembg"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -283,6 +318,7 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:textColor="#FF5D36"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

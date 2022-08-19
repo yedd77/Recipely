@@ -57,6 +57,10 @@ public class ingredient extends Fragment {
 
         LinearLayout vegetableBtn = (LinearLayout) view.findViewById(R.id.ingredientVegetablesBtn);
         LinearLayout ingredientNutsBtn = (LinearLayout) view.findViewById(R.id.ingredientNutsBtn);
+        LinearLayout ingredientSeafoodBtn = (LinearLayout) view.findViewById(R.id.ingredientSeafoodBtn);
+        LinearLayout ingredientMushroomBtn = (LinearLayout) view.findViewById(R.id.ingredientMushroomBtn);
+        LinearLayout ingredientMeatSubBtn = (LinearLayout) view.findViewById(R.id.ingredientMeatSubBtn);
+        LinearLayout ingredientDairyBtn = (LinearLayout) view.findViewById(R.id.ingredientDairyBtn);
 
         //listener for vegetable ingredient category
         vegetableBtn.setOnClickListener(v -> {
@@ -67,6 +71,26 @@ public class ingredient extends Fragment {
         ingredientNutsBtn.setOnClickListener(v ->{
             Intent nutsPage = new Intent(getActivity(), ingred_nuts.class);
             startActivity(nutsPage);
+        });
+
+        ingredientSeafoodBtn.setOnClickListener(v ->{
+            Intent seafoodPage = new Intent(getActivity(), ingred_seafood.class);
+            startActivity(seafoodPage);
+        });
+
+        ingredientMushroomBtn.setOnClickListener(v ->{
+            Intent mushroomPage = new Intent(getActivity(), ingred_mushroom.class);
+            startActivity(mushroomPage);
+        });
+
+        ingredientMeatSubBtn.setOnClickListener(v ->{
+            Intent meatPage = new Intent(getActivity(), ingred_meat.class);
+            startActivity(meatPage);
+        });
+
+        ingredientDairyBtn.setOnClickListener(v ->{
+            Intent dairyPage = new Intent(getActivity(), ingred_dairy.class);
+            startActivity(dairyPage);
         });
 
         return view;

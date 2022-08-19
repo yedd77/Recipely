@@ -40,17 +40,25 @@ public class feedback extends AppCompatActivity {
             for (UserInfo profile : user.getProviderData()){
                 emailUser = profile.getEmail();
             }
+            String textSubject = subject.getText().toString();
+            String textMessage = message.getText().toString();
 
-            HashMap data = new HashMap();
-            data.put("UserEmail", subject );
-            data.put("Subject", emailUser );
-            data.put("Message", message );
+            saveFeedback(emailUser, textSubject, textMessage);
 
-            databaseReference = FirebaseDatabase.getInstance().getReference();
-            databaseReference.child("Feedback").setValue(data);
             Toast.makeText(this, "Feedback has been accepted", Toast.LENGTH_SHORT).show();
             Intent back = new Intent(getBaseContext(), homePage.class);
             startActivity(back);
         });
+    }
+
+    private void saveFeedback(String emailUser, String subject, String message) {
+
+        HashMap data = new HashMap();
+        data.put("UserEmail", subject );
+        data.put("Subject", emailUser );
+        data.put("Message", message );
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child("Feedback").setValue(data);
     }
 }

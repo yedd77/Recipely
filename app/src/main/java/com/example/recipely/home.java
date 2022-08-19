@@ -3,12 +3,18 @@ package com.example.recipely;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.example.recipely.Adapters.RecipeByIngredAdapter;
+import com.example.recipely.Listeners.RecipeByIngredientListener;
+import com.example.recipely.Models.RecipeAPIResponse;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 /**
@@ -61,22 +67,29 @@ public class home extends Fragment {
     //set hooks
     ShimmerFrameLayout VS, HS;
     LinearLayout LL;
+    RecipeByIngredAdapter recipeByIngredAdapter;
+    RequestManager manager;
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        HS = v.findViewById(R.id.horizontalShimmer);
-        VS = v.findViewById(R.id.verticalShimmer);
-        LL = v.findViewById(R.id.loadedHome);
 
-        LL.setVisibility(View.INVISIBLE);
-        HS.startShimmer();
-        VS.startShimmer();
+        //HS = v.findViewById(R.id.horizontalShimmer);
+        //VS = v.findViewById(R.id.verticalShimmer);
+        //LL = v.findViewById(R.id.loadedHome);
+
+        //LL.setVisibility(View.INVISIBLE);
+        //HS.startShimmer();
+        //VS.startShimmer();
 
         return v;
     }
+
+
 }

@@ -17,6 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ingred_seafood"
+            android:exported="false" />
+        <activity
+            android:name=".ingred_mushroom"
+            android:exported="false" />
+        <activity
+            android:name=".ingred_meat"
+            android:exported="false" />
+        <activity
+            android:name=".ingred_dairy"
+            android:exported="false" />
+        <activity
             android:name=".feedback"
             android:exported="false" />
         <activity

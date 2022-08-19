@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ingred_veg"
+    tools:context=".ingred_seafood"
     android:orientation="vertical"
     android:weightSum="3">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/vegetable"
+        android:text="@string/seafood"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#FF5D36"
@@ -77,37 +77,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemGarlic"
+                    android:id="@+id/fishItemArticChar"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/garlic"
+                    android:text="@string/artic"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemOnion"
+                    android:id="@+id/fishItemBream"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/onion"
+                    android:text="@string/Bream"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemLettuce"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemClams"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lettuce"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/clams"
+                    android:textSize="14sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,76 +116,48 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemBellpepper"
+                    android:id="@+id/fishItemCod"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bellPep"
+                    android:text="@string/Cod"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemTomato"
+                    android:id="@+id/fishItemCrab"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tomato"
+                    android:text="@string/Crab"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemBroccoli"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemCrayfish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/broccoli"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Crayfish"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemCherrytomato"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemHake"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/CTomato"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemChili"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/chili"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemCarrot"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/carrot"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Hake"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -195,37 +167,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemBeetroot"
+                    android:id="@+id/fishItemHaddock"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/beetroot"
+                    android:text="@string/Haddock"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemRadish"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemHalibut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/radish"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Halibut"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemMangeTout"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemLobster"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mangetout"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Lobster"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -235,37 +207,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemParsley"
+                    android:id="@+id/fishItemMackerel"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/parsley"
+                    android:text="@string/Mackerel"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemSpinach"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemMahiMahi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/spinach"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/mahi"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemCayennePepper"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemMonkfish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cayennepepper"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Monkfish"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -275,37 +247,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemBasil"
+                    android:id="@+id/fishItemOctopus"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/basil"
+                    android:text="@string/Octopus"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemSpringOnion"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemOyster"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/springonion"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Oysteer"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemPotato"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemPlaice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/potato"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Plaice"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -315,37 +287,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemAsparagus"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemPollack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/asparagus"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Pollack"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemAvocado"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemPrawns"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/avocado"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Prawns"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemCabbage"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemSalmon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cabbage"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Salmon"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -355,37 +327,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemCauliflower"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemSardine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cauliflower"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Sardine"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemCelery"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemScallop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/celery"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Scallop"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemCucumber"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemSeaweed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cucumber"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Seaweed"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -395,37 +367,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemCorn"
+                    android:id="@+id/fishItemShrimp"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/corn"
+                    android:text="@string/Shrimp"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemParsnip"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemSquid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/parsnip"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Squid"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/vegItemFennel"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemSturgeon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fennel"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Sturgeon"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <LinearLayout
@@ -435,193 +407,28 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/vegItemPeas"
+                    android:id="@+id/fishItemTuna"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/peas"
+                    android:text="@string/Tuna"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemPumpkin"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
+                    android:id="@+id/fishItemTrout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pumpkin"
                     android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemSwede"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/swede"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Trout"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/vegItemTurnip"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/turnip"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemButton"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemCremini"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cremini"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/vegItemPortobello"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/portobello"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemShiitake"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/shiitake"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemOyster"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/oyster"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/vegItemMorel"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/morel"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemEnoki"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/enoki"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemChanterelle"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/chanterelle"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/vegItemMaitake"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/maitake"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/vegItemPorcini"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/porcini"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-
-            </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 

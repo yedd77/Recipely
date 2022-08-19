@@ -33,8 +33,8 @@ public class ingred_nuts extends AppCompatActivity {
             almondsSelected, peanutsSelected, brazilnutsSelected, pinenutsSelected, pecansSelected;
     String pistachiosDateExpiry, cashewsDateExpiry, walnutsDateExpiry, marconaalmondsDateExpiry, macadamianutsDateExpiry, pecansDateExpiry,
             peanutsDateExpiry, almondsDateExpiry, brazilnutsDateExpiry, hazelnutsDateExpiry, pinenutsDateExpiry;
-    String[] Ingredient = {"Pistachios", "Hazelnuts", "Cashews", "Walnuts", "MarconaAlmonds",
-            "MacadamiaNuts", "Peanuts", "Almonds", "BrazilNuts", "PineNuts", "Pecans" }; //TODO - Tambah item kat sini
+    String[] Ingredient = {"Pistachios", "Hazelnuts", "Cashews", "Walnuts", "Marcona Almonds",
+            "Macadamia Nuts", "Peanuts", "Almonds", "Brazil Nuts", "Pine Nuts", "Pecans" }; //TODO - Tambah item kat sini
     DatabaseReference dataRef;
     String currentUserID;
     FirebaseAuth mAuth;
@@ -45,17 +45,17 @@ public class ingred_nuts extends AppCompatActivity {
         setContentView(R.layout.activity_ingred_nuts);
 
         itemCount = (TextView) findViewById(R.id.itemCount);
-        Pistachios = (TextView) findViewById(R.id.vegItemPistachio);
-        Hazelnuts = (TextView) findViewById(R.id.vegItemHazelnut);
-        Cashews = (TextView) findViewById(R.id.vegItemCashew);
-        Walnuts = (TextView) findViewById(R.id.vegItemWalnut);
-        MarconaAlmonds = (TextView) findViewById(R.id.vegItemMarcona);
-        MacadamiaNuts = (TextView) findViewById(R.id.vegItemMacadamia);
-        Peanuts = (TextView) findViewById(R.id.vegItemPeanut);
-        Almonds = (TextView) findViewById(R.id.vegItemAlmond);
-        BrazilNuts = (TextView) findViewById(R.id.vegItemBrazil);
-        PineNuts = (TextView) findViewById(R.id.vegItemPine);
-        Pecans = (TextView) findViewById(R.id.vegItemPecan);
+        Pistachios = (TextView) findViewById(R.id.nutsItemPistachio);
+        Hazelnuts = (TextView) findViewById(R.id.nutsItemHazelnut);
+        Cashews = (TextView) findViewById(R.id.nutsItemCashew);
+        Walnuts = (TextView) findViewById(R.id.nutsItemWalnut);
+        MarconaAlmonds = (TextView) findViewById(R.id.nutsItemMarcona);
+        MacadamiaNuts = (TextView) findViewById(R.id.nutsItemMacadamia);
+        Peanuts = (TextView) findViewById(R.id.nutsItemPeanut);
+        Almonds = (TextView) findViewById(R.id.nutsItemAlmond);
+        BrazilNuts = (TextView) findViewById(R.id.nutsItemBrazil);
+        PineNuts = (TextView) findViewById(R.id.nutsItemPine);
+        Pecans = (TextView) findViewById(R.id.nutsItemPecan);
         addBtn = (LinearLayout) findViewById(R.id.addBtn);
 
         mAuth = FirebaseAuth.getInstance();
@@ -259,12 +259,12 @@ public class ingred_nuts extends AppCompatActivity {
                     getItemExpiry = walnutsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "MarconaAlmonds") && marconaAlmondSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Marcona Almonds") && marconaAlmondSelected == 1) {
                     getItemValue = marconaAlmondSelected;
                     getItemExpiry = marconaalmondsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "MacadamiaNuts") && macadamiaNutsSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Macadamia Nuts") && macadamiaNutsSelected == 1) {
                     getItemValue = macadamiaNutsSelected;
                     getItemExpiry = macadamianutsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
@@ -279,12 +279,12 @@ public class ingred_nuts extends AppCompatActivity {
                     getItemExpiry = almondsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "BrazilNuts") && brazilnutsSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Brazil Nuts") && brazilnutsSelected == 1) {
                     getItemValue = brazilnutsSelected;
                     getItemExpiry = brazilnutsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "PineNuts") && pinenutsSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Pine Nuts") && pinenutsSelected == 1) {
                     getItemValue = pinenutsSelected;
                     getItemExpiry = pinenutsDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
@@ -295,7 +295,7 @@ public class ingred_nuts extends AppCompatActivity {
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
             }
-            Toast.makeText(this, "Item has been recorded", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Item added into fridge", Toast.LENGTH_SHORT).show();
         });
     }
 

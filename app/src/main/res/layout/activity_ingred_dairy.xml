@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ingred_nuts"
+    tools:context=".ingred_dairy"
     android:orientation="vertical"
     android:weightSum="3">
 
@@ -30,7 +30,6 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_weight="0"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +55,6 @@
             android:textColor="#F18800"
             android:textAlignment="viewStart"/>
     </LinearLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -77,34 +75,34 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemPistachio"
+                    android:id="@+id/dairyItemButter"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pistachios"
+                    android:text="@string/butter"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemHazelnut"
+                    android:id="@+id/dairyItemCheese"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hazelnuts"
+                    android:text="@string/cheese"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemCashew"
+                    android:id="@+id/dairyItemFermenMilk"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cashews"
+                    android:text="@string/fermentedmilk"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
@@ -116,34 +114,34 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemWalnut"
+                    android:id="@+id/dairyItemCream"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/walnuts"
+                    android:text="@string/cream"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemPine"
+                    android:id="@+id/dairyItemLiquMilk"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pine"
+                    android:text="@string/liquidmilk"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemPecan"
+                    android:id="@+id/dairyItemGhee"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pecans"
+                    android:text="@string/ghee"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
@@ -155,34 +153,35 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemPeanut"
+                    android:id="@+id/dairyItemCondenMilk"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/peanuts"
+                    android:text="@string/condensedmilk"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+
+                <TextView
+                    android:id="@+id/dairyItemCasein"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/casein"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/nutsItemAlmond"
+                    android:id="@+id/dairyItemYogurt"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/almonds"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/nutsItemBrazil"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/brazil"
+                    android:text="@string/yogurt"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
@@ -195,26 +194,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nutsItemMarcona"
+                    android:id="@+id/dairyItemEvapoMilk"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/marconaalmonds"
+                    android:text="@string/evaporatedmilk"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
 
-                <TextView
-                    android:id="@+id/nutsItemMacadamia"
-                    android:background="@drawable/ingredient_itembg"
-                    android:elevation="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/macdamia"
-                    android:layout_margin="5dp"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"/>
+
 
 
             </LinearLayout>
@@ -283,6 +273,7 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:textColor="#FF5D36"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
