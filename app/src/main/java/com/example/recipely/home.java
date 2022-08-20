@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.recipely.Adapters.RecipeByIngredAdapter;
-import com.example.recipely.Listeners.RecipeByIngredientListener;
-import com.example.recipely.Models.RecipeAPIResponse;
+import com.example.recipely.Adapters.RandomRecipeAdapter;
+import com.example.recipely.Listeners.RandomRecipeResponseListener;
+import com.example.recipely.Models.RandomRecipeAPIResponse;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 /**
@@ -67,7 +67,8 @@ public class home extends Fragment {
     //set hooks
     ShimmerFrameLayout VS, HS;
     LinearLayout LL;
-    RecipeByIngredAdapter recipeByIngredAdapter;
+
+    RandomRecipeAdapter randomRecipeAdapter;
     RequestManager manager;
     RecyclerView recyclerView;
 
@@ -75,10 +76,8 @@ public class home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
-
 
         //HS = v.findViewById(R.id.horizontalShimmer);
         //VS = v.findViewById(R.id.verticalShimmer);
@@ -88,8 +87,26 @@ public class home extends Fragment {
         //HS.startShimmer();
         //VS.startShimmer();
 
+        manager = new RequestManager(getContext());
+        manager.getRandomRecipe(randomRecipeResponseListener);
         return v;
+
     }
 
+    private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
+        @Override
+        public void didFetch(RandomRecipeAPIResponse response, String message) {
+            recyclerView = (RecyclerView) getView().findViewById(R.id.randomRecipeRecycler);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 20));
+            randomRecipeAdapter = new RandomRecipeAdapter(getContext() , response.recipes);
+            recyclerView.setAdapter(randomRecipeAdapter);
 
+        }
+
+        @Override
+        public void didError(String message) {
+            Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+    };
 }

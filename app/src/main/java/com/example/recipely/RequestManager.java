@@ -2,8 +2,8 @@ package com.example.recipely;
 
 import android.content.Context;
 
-import com.example.recipely.Listeners.RecipeByIngredientListener;
-import com.example.recipely.Models.RecipeAPIResponse;
+import com.example.recipely.Listeners.RandomRecipeResponseListener;
+import com.example.recipely.Models.RandomRecipeAPIResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,13 +25,13 @@ public class RequestManager {
         this.context = context;
     }
 
-    public void getRecipeByIngredient(RecipeByIngredientListener listener){
-        CallRecipeByIngredient callRecipeByIngredient = retrofit.create(CallRecipeByIngredient.class);
-        Call<RecipeAPIResponse> call = callRecipeByIngredient.callRecipe(context.getString(R.string.API) , "10");
-        call.enqueue(new Callback<RecipeAPIResponse>() {
+    public void getRandomRecipe(RandomRecipeResponseListener listener){
+        CallRandomRecipe callRandomRecipe = retrofit.create(CallRandomRecipe.class);
+        Call<RandomRecipeAPIResponse> call = callRandomRecipe.callRecipe(context.getString(R.string.API) , "20");
+        call.enqueue(new Callback<RandomRecipeAPIResponse>() {
             @Override
-            public void onResponse(Call<RecipeAPIResponse> call, Response<RecipeAPIResponse> response) {
-                if(!response.isSuccessful()){
+            public void onResponse(Call<RandomRecipeAPIResponse> call, Response<RandomRecipeAPIResponse> response) {
+                if (!response.isSuccessful()){
                     listener.didError(response.message());
                     return;
                 }
@@ -39,14 +39,14 @@ public class RequestManager {
             }
 
             @Override
-            public void onFailure(Call<RecipeAPIResponse> call, Throwable t) {
+            public void onFailure(Call<RandomRecipeAPIResponse> call, Throwable t) {
                 listener.didError(t.getMessage());
             }
         });
     }
-    private interface CallRecipeByIngredient{
-        @GET("recipes/findByIngredients")
-        Call<RecipeAPIResponse> callRecipe(
+    private interface CallRandomRecipe{
+        @GET("recipes/random")
+        Call<RandomRecipeAPIResponse> callRecipe(
                 @Query("apiKey") String apiKey,
                 @Query("number") String number
         );

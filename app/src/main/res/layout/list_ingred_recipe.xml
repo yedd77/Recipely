@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recipeCardContainer"
-    android:layout_width="match_parent"
+    android:layout_width="270dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/white"
@@ -11,7 +11,7 @@
     android:elevation="3dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -22,72 +22,53 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/imageexample"/>
+        <TextView
+            android:id="@+id/recipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Recipe Name"
+            android:textSize="18sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="@font/roboto"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="3"
             android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/recipeServing"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:layout_marginTop="5dp"
+                android:drawableStart="@drawable/ic_baseline_group_24"
+                android:drawablePadding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="1 Serving"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:fontFamily="@font/roboto"/>
 
-                <TextView
-                    android:id="@+id/recipeName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Recipe Name"
-                    android:textSize="22sp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/recipeServing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:drawableStart="@drawable/ic_baseline_group_24"
-                    android:drawablePadding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="0dp"
-                    android:text="1 Serving"
-                    android:textSize="18sp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:fontFamily="@font/roboto"/>
-
-                <TextView
-                    android:id="@+id/recipeIngredientMissed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:drawableStart="@drawable/ic_baseline_no_food_24"
-                    android:drawablePadding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:text="0 Missed Ingredient"
-                    android:textSize="18sp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:fontFamily="@font/roboto"/>
-            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
             <TextView
                 android:id="@+id/recipeTimePrepared"
-                android:layout_weight="1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
                 android:textAlignment="viewEnd"
                 android:layout_marginEnd="10dp"
                 android:text="10 Min"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:ellipsize="end"
                 android:maxLines="1"

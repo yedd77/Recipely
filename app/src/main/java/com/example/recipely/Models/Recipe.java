@@ -18,9 +18,6 @@ public class Recipe {
     public int cookingMinutes;
     public int aggregateLikes;
     public int healthScore;
-    public String creditsText;
-    public String license;
-    public String sourceName;
     public double pricePerServing;
     public ArrayList<ExtendedIngredient> extendedIngredients;
     public int id;
@@ -33,10 +30,12 @@ public class Recipe {
     public String summary;
     public ArrayList<Object> cuisines;
     public ArrayList<String> dishTypes;
-    public ArrayList<Object> diets;
+    public ArrayList<String> diets;
     public ArrayList<Object> occasions;
     public String instructions;
     public ArrayList<AnalyzedInstruction> analyzedInstructions;
+    public Object sourceName;
+    public Object creditsText;
     public Object originalId;
     public String spoonacularSourceUrl;
 }
