@@ -214,4 +214,20 @@
 
     <!--API-->
     <string name="API">2ce0080ff51b4eaca278964e5d29ce1b</string>
+
+    <!--Predefined-->
+    <string name="recipeName">Recipe Name</string>
+    <string name="by">By</string>
+    <string name="source">source</string>
+    <string name="serving">3 Serving</string>
+    <string name="time">99 Min</string>
+    <string name="score">99.9</string>
+    <string name="summary">Recipe Summary</string>
+    <string name="ingredient">Recipe Ingredient</string>
+    <string name="unit">9 pcs</string>
+    <string name="ingredName">Chicken</string>
+
+
+
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 </resources>

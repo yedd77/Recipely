@@ -1,5 +1,6 @@
 package com.example.recipely;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.recipely.Adapters.RandomRecipeAdapter;
 import com.example.recipely.Listeners.RandomRecipeResponseListener;
+import com.example.recipely.Listeners.RecipeClickListener;
 import com.example.recipely.Models.RandomRecipeAPIResponse;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -79,16 +81,10 @@ public class home extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        //HS = v.findViewById(R.id.horizontalShimmer);
-        //VS = v.findViewById(R.id.verticalShimmer);
-        //LL = v.findViewById(R.id.loadedHome);
-
-        //LL.setVisibility(View.INVISIBLE);
-        //HS.startShimmer();
-        //VS.startShimmer();
-
         manager = new RequestManager(getContext());
         manager.getRandomRecipe(randomRecipeResponseListener);
+
+        recyclerView = (RecyclerView) v.findViewById(R.id.randomRecipeRecycler);
         return v;
 
     }
@@ -96,17 +92,25 @@ public class home extends Fragment {
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeAPIResponse response, String message) {
-            recyclerView = (RecyclerView) getView().findViewById(R.id.randomRecipeRecycler);
+
             recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 20));
-            randomRecipeAdapter = new RandomRecipeAdapter(getContext() , response.recipes);
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 50));
+            randomRecipeAdapter = new RandomRecipeAdapter(getContext() , response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
 
         }
-
         @Override
         public void didError(String message) {
             Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
+        @Override
+        public void onRecipeClick(String id) {
+            startActivity(new Intent(getContext(), RecipeDetails.class)
+                    .putExtra("id", id));
+
         }
     };
 }
