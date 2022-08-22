@@ -4,8 +4,12 @@ import android.content.Context;
 
 import com.example.recipely.Listeners.RandomRecipeResponseListener;
 import com.example.recipely.Listeners.RecipeDetailsListeners;
+import com.example.recipely.Listeners.instructionListener;
+import com.example.recipely.Models.InstructionResponse;
 import com.example.recipely.Models.RandomRecipeAPIResponse;
 import com.example.recipely.Models.RecipeDetailsResponse;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -70,6 +74,28 @@ public class RequestManager {
 
     }
 
+    public void getInstruction(instructionListener listener, int id){
+        CallInstruction callInstruction = retrofit.create(CallInstruction.class);
+        Call <List<InstructionResponse>> call = callInstruction.callInstruction(id, context.getString(R.string.API));
+        call.enqueue(new Callback<List<InstructionResponse>>() {
+            @Override
+            public void onResponse(Call<List<InstructionResponse>> call, Response<List<InstructionResponse>> response) {
+
+                if(!response.isSuccessful()){
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<InstructionResponse>> call, Throwable t) {
+
+                listener.didError(t.getMessage());
+            }
+        });
+    }
+
     private interface CallRandomRecipe{
         @GET("recipes/random")
         Call<RandomRecipeAPIResponse> callRecipe(
@@ -87,4 +113,11 @@ public class RequestManager {
         );
     }
 
+    private  interface CallInstruction{
+        @GET("recipes/{id}/analyzedInstructions")
+        Call<List<InstructionResponse>> callInstruction(
+                @Path("id") int id,
+                @Query("apiKey") String apiKey
+        );
+    }
 }
