@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.example.recipely.Adapters.RandomRecipeAdapter;
@@ -33,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,6 +93,8 @@ public class home extends Fragment {
     RequestManager manager;
     RecyclerView recyclerView, recyclerFromYourFridge;
     RecipeByIngredientAdapter recipeByIngredientAdapter;
+    LinearLayout NoDataAPI;
+    ScrollView havedataAPI;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,8 +103,13 @@ public class home extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
+        NoDataAPI = (LinearLayout) v.findViewById(R.id.NoDataAPI);
+        havedataAPI = (ScrollView) v.findViewById(R.id.havedataAPI);
+
         manager = new RequestManager(getContext());
         manager.getRandomRecipe(randomRecipeResponseListener);
+
+        NoDataAPI.setVisibility(View.GONE);
 
         recyclerFromYourFridge = (RecyclerView) v.findViewById(R.id.recyclerFromYourFridge);
         //get ingredient from database
@@ -114,6 +123,9 @@ public class home extends Fragment {
                     for (DataSnapshot userSnapshot : task.getResult().getChildren()){
                         Ingredient.add(userSnapshot.getKey());
                     }
+                }
+                if (Ingredient.size() == 0){
+                    NoDataAPI.setVisibility(View.VISIBLE);
                 }
                 manager.getRecipeByIngredient(recipeByIngredientListener , Ingredient, 20);
             }

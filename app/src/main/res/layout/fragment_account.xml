@@ -136,7 +136,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="App Version: V1.1.004"
+                android:text="App Version: V1.1.005"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto"
                 android:textSize="12sp"
