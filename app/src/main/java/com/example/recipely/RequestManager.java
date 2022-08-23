@@ -2,13 +2,26 @@ package com.example.recipely;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import com.example.recipely.Listeners.RandomRecipeResponseListener;
+import com.example.recipely.Listeners.RecipeByIngredientListener;
 import com.example.recipely.Listeners.RecipeDetailsListeners;
 import com.example.recipely.Listeners.instructionListener;
+import com.example.recipely.Models.Ingredient;
 import com.example.recipely.Models.InstructionResponse;
 import com.example.recipely.Models.RandomRecipeAPIResponse;
 import com.example.recipely.Models.RecipeDetailsResponse;
+import com.example.recipely.Models.RecipeIngredResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,7 +48,7 @@ public class RequestManager {
 
     public void getRandomRecipe(RandomRecipeResponseListener listener){
         CallRandomRecipe callRandomRecipe = retrofit.create(CallRandomRecipe.class);
-        Call<RandomRecipeAPIResponse> call = callRandomRecipe.callRecipe(context.getString(R.string.API) , "50");
+        Call<RandomRecipeAPIResponse> call = callRandomRecipe.callRecipe(context.getString(R.string.API) , "20");
         call.enqueue(new Callback<RandomRecipeAPIResponse>() {
             @Override
             public void onResponse(Call<RandomRecipeAPIResponse> call, Response<RandomRecipeAPIResponse> response) {
@@ -96,6 +109,28 @@ public class RequestManager {
         });
     }
 
+    public void getRecipeByIngredient(RecipeByIngredientListener listener, List <String> IngredientList, int number){
+        CallRecipeByIngredient callRecipeByIngredient = retrofit.create(CallRecipeByIngredient.class);
+
+
+        Call <List<RecipeIngredResponse>> call = callRecipeByIngredient.callRecipeByIngredient(context.getString(R.string.API), IngredientList, 20);
+        call.enqueue(new Callback<List<RecipeIngredResponse>>() {
+            @Override
+            public void onResponse(Call<List<RecipeIngredResponse>> call, Response<List<RecipeIngredResponse>> response) {
+                if(!response.isSuccessful()){
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<RecipeIngredResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+            }
+        });
+    }
+
     private interface CallRandomRecipe{
         @GET("recipes/random")
         Call<RandomRecipeAPIResponse> callRecipe(
@@ -118,6 +153,15 @@ public class RequestManager {
         Call<List<InstructionResponse>> callInstruction(
                 @Path("id") int id,
                 @Query("apiKey") String apiKey
+        );
+    }
+
+    private interface CallRecipeByIngredient{
+        @GET("recipes/findByIngredients")
+        Call<List<RecipeIngredResponse>> callRecipeByIngredient(
+                @Query("apiKey") String apiKey,
+                @Query("ingredients") List <String> Ingredient,
+                @Query("number") int number
         );
     }
 }

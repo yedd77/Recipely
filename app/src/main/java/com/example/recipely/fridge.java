@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -41,7 +43,8 @@ public class fridge extends Fragment {
 
     private View ingredientView;
     private RecyclerView myIngredientList;
-
+    private LinearLayout noFridge;
+    private ScrollView HaveData;
     private DatabaseReference fridgeRef;
     private FirebaseAuth mAuth;
     private String currentUserID;
@@ -91,7 +94,11 @@ public class fridge extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ingredientView = inflater.inflate(R.layout.fragment_fridge, container, false);
-        
+
+        HaveData = (ScrollView) ingredientView.findViewById(R.id.HaveData);
+        noFridge = (LinearLayout) ingredientView.findViewById(R.id.noFridge);
+
+        HaveData.setVisibility(View.GONE);
         myIngredientList = (RecyclerView) ingredientView.findViewById(R.id.ingredientList);
         myIngredientList.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -99,6 +106,20 @@ public class fridge extends Fragment {
         currentUserID = mAuth.getCurrentUser().getUid();
 
         fridgeRef = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUserID);
+
+        fridgeRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    HaveData.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         return ingredientView;
     }
@@ -117,7 +138,6 @@ public class fridge extends Fragment {
                 = new FirebaseRecyclerAdapter<fridgeItem, fridgeViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull fridgeViewHolder holder, int position, @NonNull fridgeItem model) {
-
                 String itemExpiry = model.getExpiry();
                 String itemName = getRef(position).getKey();
 
@@ -126,8 +146,20 @@ public class fridge extends Fragment {
 
                 holder.deleteBtn.setOnClickListener(v ->{
                     fridgeRef.child(getRef(position).getKey()).removeValue();
-                });
+                    fridgeRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(!snapshot.exists()){
+                                HaveData.setVisibility(View.GONE);
+                            }
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                });
             }
 
             @NonNull

@@ -3,10 +3,13 @@ package com.example.recipely;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +17,31 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.recipely.Adapters.RandomRecipeAdapter;
+import com.example.recipely.Adapters.RecipeByIngredientAdapter;
 import com.example.recipely.Listeners.RandomRecipeResponseListener;
+import com.example.recipely.Listeners.RecipeByIngredientListener;
 import com.example.recipely.Listeners.RecipeClickListener;
 import com.example.recipely.Models.RandomRecipeAPIResponse;
+import com.example.recipely.Models.RecipeIngredResponse;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link home#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class home extends Fragment {
+    List<String> Ingredient =  new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,7 +89,8 @@ public class home extends Fragment {
 
     RandomRecipeAdapter randomRecipeAdapter;
     RequestManager manager;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView, recyclerFromYourFridge;
+    RecipeByIngredientAdapter recipeByIngredientAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,6 +102,22 @@ public class home extends Fragment {
         manager = new RequestManager(getContext());
         manager.getRandomRecipe(randomRecipeResponseListener);
 
+        recyclerFromYourFridge = (RecyclerView) v.findViewById(R.id.recyclerFromYourFridge);
+        //get ingredient from database
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        String currentUser = mAuth.getCurrentUser().getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUser);
+        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()){
+                    for (DataSnapshot userSnapshot : task.getResult().getChildren()){
+                        Ingredient.add(userSnapshot.getKey());
+                    }
+                }
+                manager.getRecipeByIngredient(recipeByIngredientListener , Ingredient, 20);
+            }
+        });
         recyclerView = (RecyclerView) v.findViewById(R.id.randomRecipeRecycler);
         return v;
 
@@ -94,7 +128,7 @@ public class home extends Fragment {
         public void didFetch(RandomRecipeAPIResponse response, String message) {
 
             recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 50));
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 20));
             randomRecipeAdapter = new RandomRecipeAdapter(getContext() , response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
 
@@ -102,6 +136,22 @@ public class home extends Fragment {
         @Override
         public void didError(String message) {
             Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private final RecipeByIngredientListener recipeByIngredientListener = new RecipeByIngredientListener() {
+        @Override
+        public void didFetch(List<RecipeIngredResponse> response, String message) {
+
+            recyclerFromYourFridge.setHasFixedSize(true);
+            recyclerFromYourFridge.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+            recipeByIngredientAdapter = new RecipeByIngredientAdapter(getContext(), response, recipeClickListener);
+            recyclerFromYourFridge.setAdapter(recipeByIngredientAdapter);
+        }
+
+        @Override
+        public void didError(String message) {
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
     };
 

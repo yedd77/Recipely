@@ -90,6 +90,7 @@ public class account extends Fragment {
         AccountPage.setOnClickListener(v ->{
             Intent myAccountPage = new Intent(getActivity(), Account_account_node.class);
             startActivity(myAccountPage);
+
          });
 
         //Delete intent to delete all the item in database

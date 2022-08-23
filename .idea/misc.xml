@@ -43,19 +43,21 @@
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/forgotpass_popup.xml" value="0.22" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_account.xml" value="0.25" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_first.xml" value="0.23385416666666667" />
-        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_fridge.xml" value="0.1" />
+        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_fridge.xml" value="0.25" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_ingredient.xml" value="0.16" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/fragment_second.xml" value="0.25" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/homepage_item.xml" value="0.22" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/homepage_loaded.xml" value="0.2" />
-        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/homepage_loadeed.xml" value="0.33" />
+        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/homepage_loadeed.xml" value="0.25" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/horizontal_home_shimmer.xml" value="0.3625" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/ingred_seafood.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/ingredientrecycle.xml" value="0.264" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_ingred_recipe.xml" value="0.33" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_instruction.xml" value="0.3405128205128205" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_instruction_steps.xml" value="0.3415384615384615" />
+        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_recipe_by_ingredient.xml" value="0.3625" />
+        <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_recipebyingred.xml" value="0.2965811965811966" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/list_recipedetails_ingred.xml" value="0.2965811965811966" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/zarit/AndroidStudioProjects/Recipely/app/src/main/res/layout/sidebar_header.xml" value="0.2" />
