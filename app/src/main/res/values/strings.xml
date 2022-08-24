@@ -56,7 +56,7 @@
     <string name="hint">Tips: If you add an existing ingredient on your fridge, we will detect as you resupply your ingredient. The expiry date will be reset</string>
     <string name="noData">We can\'t find any ingredient in your fridge. Try add some ingredient.</string>
     <string name="noAPI">We can\'t find recipe because your fridge is empty. Try add some ingredient into your fridge to explore recipe you can make right now</string>
-
+    <string name="expiryNote">You have some ingredient that expiring its expiration date</string>
     <!-- Ingredient Vegetable-->
     <string name="garlic">Garlic</string>
     <string name="onion">Onion</string>

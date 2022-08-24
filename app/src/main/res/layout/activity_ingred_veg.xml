@@ -99,12 +99,12 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemLettuce"
+                    android:id="@+id/vegItemCayennePepper"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lettuce"
+                    android:text="@string/cayennepepper"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>
@@ -257,12 +257,12 @@
                     android:fontFamily="@font/roboto"/>
 
                 <TextView
-                    android:id="@+id/vegItemCayennePepper"
+                    android:id="@+id/vegItemLettuce"
                     android:background="@drawable/ingredient_itembg"
                     android:elevation="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cayennepepper"
+                    android:text="@string/lettuce"
                     android:layout_margin="5dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/roboto"/>

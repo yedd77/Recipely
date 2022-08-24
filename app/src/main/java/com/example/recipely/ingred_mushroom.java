@@ -29,7 +29,7 @@ public class ingred_mushroom extends AppCompatActivity {
     Boolean ShiitakeIsClicked = false, CreminiIsClicked = false,ButtonIsClicked = false, BrownIsClicked = false, DriedIsClicked = false, OysterIsClicked = false, PorciniIsClicked = false, MixedMushroomIsClicked = false, BabyBellaIsClicked = false, WhiteIsClicked = false, CannedIsClicked = false, PortobelloCapIsClicked = false, ChestnutIsClicked = false;
     int ShiitakeSelected, CreminiSelected, ButtonSelected, BrownSelected, DriedSelected, OysterSelected, PorciniSelected, MixedMushroomSelected, BabyBellaSelected, WhiteSelected, CannedSelected, PortobelloCapSelected, ChestnutSelected;
     String ShiitakeDateExpiry, CreminiDateExpiry, ButtonDateExpiry, BrownDateExpiry, DriedDateExpiry, OysterDateExpiry, PorciniDateExpiry, MixedMushroomDateExpiry, BabyBellaDateExpiry, WhiteDateExpiry, CannedDateExpiry, PortobelloCapDateExpiry, ChestnutDateExpiry;
-    String[] Ingredient = {"Shiitake", "Cremini", "Button", "Brown", "Dried", "Oyster", "Porcini", "Mixed Mushroom", "Baby Bella", "White", "Canned", "Portobello Cap", "Chestnut"}; //TODO - Tambah item kat sini
+    String[] Ingredient = {"Shiitake Mushroom", "Cremini Mushroom", "Button Mushroom", "Brown Mushroom", "Dried Mushroom", "Oyster Mushroom", "Porcini Mushroom", "Mixed Mushroom", "Baby Bella Mushroom", "White Mushroom", "Canned Mushroom", "Portobello Cap Mushroom", "Chestnut Mushroom"}; //TODO - Tambah item kat sini
 
     DatabaseReference dataRef;
     String currentUserID;

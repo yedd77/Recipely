@@ -5,7 +5,61 @@
     android:layout_height="match_parent"
     tools:context=".home">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/LinearLayout">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/logogrey"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popular"
+            android:textSize="20sp"
+            android:layout_marginTop="18dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/horizontal_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp">
+
+                <include layout="@layout/horizontal_home_shimmer"/>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/from"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/Vertical_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/vertical_home_shimmer"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

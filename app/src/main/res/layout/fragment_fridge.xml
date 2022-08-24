@@ -30,6 +30,36 @@
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/roboto"/>
 
+        <LinearLayout
+            android:id="@+id/expiryNote"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFD1D1"
+            android:elevation="3dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/redbulb"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expiryNote"
+                android:textColor="#FF4040"
+                android:textSize="16sp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
         <ScrollView
             android:id="@+id/HaveData"
             android:layout_width="match_parent"
@@ -40,7 +70,9 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:paddingEnd="32dp"
-                android:paddingTop="32dp">
+                android:paddingTop="20dp"
+                android:orientation="vertical">
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/ingredientList"

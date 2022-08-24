@@ -61,11 +61,11 @@ public class Account_account_node extends AppCompatActivity {
             startActivity(signOut);
         });
 
-        //Debug
-        Button debugButton = (Button) findViewById(R.id.debugButton);
-        debugButton.setOnClickListener( v->{
-
-        });
+//        //Debug
+//        Button debugButton = (Button) findViewById(R.id.debugButton);
+//        debugButton.setOnClickListener( v->{
+//
+//        });
 
 
     }

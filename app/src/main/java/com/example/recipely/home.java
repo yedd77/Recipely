@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,7 +88,7 @@ public class home extends Fragment {
 
     //set hooks
     ShimmerFrameLayout VS, HS;
-    LinearLayout LL;
+    LinearLayout LL, Loaded;
 
     RandomRecipeAdapter randomRecipeAdapter;
     RequestManager manager;
@@ -103,6 +104,23 @@ public class home extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
+        //shimmer effect
+        HS = v.findViewById(R.id.horizontal_shimmer);
+        VS = v.findViewById(R.id.Vertical_shimmer);
+        LL = v.findViewById(R.id.LinearLayout);
+        Loaded = v.findViewById(R.id.loadedHome);
+
+        HS.startShimmer();
+        VS.startShimmer();
+        Loaded.setVisibility(View.INVISIBLE);
+        Handler handler = new Handler();
+        handler.postDelayed(()->{
+            HS.stopShimmer();
+            VS.stopShimmer();
+            LL.setVisibility(View.GONE);
+            Loaded.setVisibility(View.VISIBLE);
+        },5000);
+
         NoDataAPI = (LinearLayout) v.findViewById(R.id.NoDataAPI);
         havedataAPI = (ScrollView) v.findViewById(R.id.havedataAPI);
 
@@ -114,22 +132,24 @@ public class home extends Fragment {
         recyclerFromYourFridge = (RecyclerView) v.findViewById(R.id.recyclerFromYourFridge);
         //get ingredient from database
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        String currentUser = mAuth.getCurrentUser().getUid();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUser);
-        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    for (DataSnapshot userSnapshot : task.getResult().getChildren()){
-                        Ingredient.add(userSnapshot.getKey());
+        if (!(mAuth.getCurrentUser() == null)){
+            String currentUser = mAuth.getCurrentUser().getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Ingredient").child(currentUser);
+            reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if(task.isSuccessful()){
+                        for (DataSnapshot userSnapshot : task.getResult().getChildren()){
+                            Ingredient.add(userSnapshot.getKey());
+                        }
                     }
+                    if (Ingredient.size() == 0){
+                        NoDataAPI.setVisibility(View.VISIBLE);
+                    }
+                    manager.getRecipeByIngredient(recipeByIngredientListener , Ingredient, 20);
                 }
-                if (Ingredient.size() == 0){
-                    NoDataAPI.setVisibility(View.VISIBLE);
-                }
-                manager.getRecipeByIngredient(recipeByIngredientListener , Ingredient, 20);
-            }
-        });
+            });
+        }
         recyclerView = (RecyclerView) v.findViewById(R.id.randomRecipeRecycler);
         return v;
 

@@ -31,31 +31,24 @@ import java.util.Objects;
 public class ingred_veg extends AppCompatActivity {
 
     TextView itemCount , Garlic, Onion, Lettuce, BellPepper, Tomato, Broccoli, CherryTomato, Chili, Carrot, BeetRoot, MangeTout, Radish, Parsley, Spinach, Basil, Potato,
-            SpringOnion, CayennePepper, Asparagus, Avocado, Cabbage, CauliFlower, Celery, Cucumber, Corn, Parsnip, Fennel, Peas, Pumpkin, Swede, Turnip, ButtonM, Cremini, Portobello, Shiitake, Oyster, Porcini, Morel, Enoki, Chanterelle, Maitake;
+            SpringOnion, CayennePepper, Asparagus, Avocado, Cabbage, CauliFlower, Celery, Cucumber, Corn, Parsnip, Fennel, Peas, Pumpkin, Swede, Turnip;
     LinearLayout addBtn;
     int item = 0;
     Boolean GarlicIsClicked = false, OnionIsClicked = false, LettuceIsClicked = false, BellPepperIsClicked = false, TomatoIsClicked = false, BroccoliIsClicked = false, CherryTomatoIsClicked = false, ChiliIsClicked = false, CarrotIsClicked = false,
             BeetRootIsClicked = false, MangeToutIsClicked = false, RadishIsClicked = false, ParsleyIsClicked = false, SpinachIsClicked = false, PotatoIsClicked = false, BasilIsClicked = false, SpringOnionIsClicked = false,
             CayennePepperIsClicked = false,
             AsparagusIsClicked = false, AvocadoIsClicked = false, CabbageIsClicked = false, CauliFlowerIsClicked = false, CeleryIsClicked = false, CucumberIsClicked = false,
-            CornIsClicked = false, ParsnipIsClicked = false, FennelIsClicked = false, PeasIsClicked = false, PumpkinIsClicked = false, SwedeIsClicked = false, TurnipIsClicked = false,
-            ButtonMIsClicked = false, CreminiIsClicked = false, PortobelloIsClicked = false, ShiitakeIsClicked = false, OysterIsClicked = false, PorciniIsClicked = false,
-            MorelIsClicked = false, EnokiIsClicked = false, ChanterelleIsClicked = false, MaitakeIsClicked = false;
+            CornIsClicked = false, ParsnipIsClicked = false, FennelIsClicked = false, PeasIsClicked = false, PumpkinIsClicked = false, SwedeIsClicked = false, TurnipIsClicked = false;
     int garlicSelected, onionSelected, lettuceSelected, bellPepperSelected, tomatoSelected, broccoliSelected, cherryTomatoSelected, chiliSelected, carrotSelected,
             beetrootSelected, mangetoutSelected, radishSelected, parsleySelected, spinachSelected, potatoSelected, basilSelected, springOnionSelected, cayennePepperSelected,
             asparagusSelected, avocadoSelected, cabbageSelected, cauliflowerSelected, celerySelected, cucumberSelected,
-            cornSelected, parsnipSelected, fennelSelected, peasSelected, pumpkinSelected, swedeSelected, turnipSelected,
-            buttonMSelected, creminiSelected, portobelloSelected, shiitakeSelected, oysterSelected, porciniSelected,
-            morelSelected, enokiSelected, chanterelleSelected, maitakeSelected;
+            cornSelected, parsnipSelected, fennelSelected, peasSelected, pumpkinSelected, swedeSelected, turnipSelected;
     String onionDateExpiry, garlicDateExpiry, lettuceDateExpiry, bellPepperDateExpiry, tomatoDateExpiry, broccoliDateExpiry, cherryTomatoDateExpiry, chiliDateExpiry, carrotDateExpiry,
             beetrootDateExpiry, mangetoutDateExpiry, radishDateExpiry, parsleyDateExpiry, spinachDateExpiry, potatoDateExpiry, basilDateExpiry, springOnionDateExpiry, cayennePepperDateExpiry,
             asparagusDateExpiry, avocadoDateExpiry, cabbageDateExpiry, cauliflowerDateExpiry, celeryDateExpiry, cucumberDateExpiry,
-            cornDateExpiry, parsnipDateExpiry, fennelDateExpiry, peasDateExpiry, pumpkinDateExpiry, swedeDateExpiry, turnipDateExpiry,
-            buttonMDateExpiry, creminiDateExpiry, portobelloDateExpiry, shiitakeDateExpiry, oysterDateExpiry, porciniDateExpiry,
-            maitakeDateExpiry, chanterelleDateExpiry, enokiDateExpiry, morelDateExpiry;
-    String[] Ingredient = {"Garlic" , "Onion", "Lettuce", "BellPepper", "Tomato", "Broccoli", "Cherry Tomato", "Chili", "Carrot", "BeetRoot", "MangeTout", "Radish", "Parsley", "Spinach", "Basil", "Potato", "Spring Onion", "Cayenne Pepper",
-            "Asparagus", "Avocado", "Cabbage", "Cauliflower", "Celery", "Cucumber", "Corn", "Parsnip", "Fennel", "Peas", "Pumpkin", "Swede", "Turnip", "Button", "Cremini", "Portobello", "Shiitake", "Oyster", "Porcini", "Morel", "Enoki",
-            "Chanterelle", "Maitake"}; //TODO - Tambah item kat sini
+            cornDateExpiry, parsnipDateExpiry, fennelDateExpiry, peasDateExpiry, pumpkinDateExpiry, swedeDateExpiry, turnipDateExpiry;
+    String[] Ingredient = {"Garlic" , "Onion", "Lettuce", "Bell Pepper", "Tomato", "Broccoli", "Cherry Tomato", "Chili", "Carrot", "BeetRoot", "Mange Tout", "Radish", "Parsley", "Spinach", "Basil", "Potato", "Spring Onion", "Cayenne Pepper",
+            "Asparagus", "Avocado", "Cabbage", "Cauliflower", "Celery", "Cucumber", "Corn", "Parsnip", "Fennel", "Peas", "Pumpkin", "Swede", "Turnip"}; //TODO - Tambah item kat sini
     DatabaseReference dataRef;
     String currentUserID;
     FirebaseAuth mAuth;
@@ -97,16 +90,6 @@ public class ingred_veg extends AppCompatActivity {
         Pumpkin = (TextView) findViewById(R.id.vegItemPumpkin);
         Swede = (TextView) findViewById(R.id.vegItemSwede);
         Turnip = (TextView) findViewById(R.id.vegItemTurnip);
-        ButtonM = (TextView) findViewById(R.id.vegItemButton);
-        Cremini = (TextView) findViewById(R.id.vegItemCremini);
-        Portobello = (TextView) findViewById(R.id.vegItemPortobello);
-        Shiitake = (TextView) findViewById(R.id.vegItemShiitake);
-        Oyster = (TextView) findViewById(R.id.vegItemOyster);
-        Porcini = (TextView) findViewById(R.id.vegItemPorcini);
-        Morel = (TextView) findViewById(R.id.vegItemMorel);
-        Enoki = (TextView) findViewById(R.id.vegItemEnoki);
-        Chanterelle = (TextView) findViewById(R.id.vegItemChanterelle);
-        Maitake = (TextView) findViewById(R.id.vegItemMaitake);
 
         addBtn = (LinearLayout) findViewById(R.id.addBtn);
 
@@ -583,155 +566,7 @@ public class ingred_veg extends AppCompatActivity {
             }
         });
 
-        ButtonM.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!ButtonMIsClicked){
 
-                addItemCount();
-                setClicked(ButtonM);
-                ButtonMIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(ButtonM);
-                ButtonMIsClicked = false;
-            }
-        });
-
-        Cremini.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!CreminiIsClicked){
-
-                addItemCount();
-                setClicked(Cremini);
-                CreminiIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Cremini);
-                CreminiIsClicked = false;
-            }
-        });
-
-        Portobello.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!PorciniIsClicked){
-
-                addItemCount();
-                setClicked(Portobello);
-                PorciniIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Portobello);
-                PorciniIsClicked = false;
-            }
-        });
-
-        Shiitake.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!ShiitakeIsClicked){
-
-                addItemCount();
-                setClicked(Shiitake);
-                ShiitakeIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Shiitake);
-                ShiitakeIsClicked = false;
-            }
-        });
-
-        Oyster.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!OysterIsClicked){
-
-                addItemCount();
-                setClicked(Oyster);
-                OysterIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Oyster);
-                OysterIsClicked = false;
-            }
-        });
-
-        Porcini.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!PorciniIsClicked){
-
-                addItemCount();
-                setClicked(Porcini);
-                PorciniIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Porcini);
-                PorciniIsClicked = false;
-            }
-        });
-
-        Morel.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!MorelIsClicked){
-
-                addItemCount();
-                setClicked(Morel);
-                MorelIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Morel);
-                MorelIsClicked = false;
-            }
-        });
-
-        Enoki.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!EnokiIsClicked){
-
-                addItemCount();
-                setClicked(Enoki);
-                EnokiIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Enoki);
-                EnokiIsClicked = false;
-            }
-        });
-
-        Chanterelle.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!ChanterelleIsClicked){
-
-                addItemCount();
-                setClicked(Chanterelle);
-                ChanterelleIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Chanterelle);
-                ChanterelleIsClicked = false;
-            }
-        });
-
-        Maitake.setOnClickListener(view -> {
-            //check if the item has been clicked or not
-            if (!MaitakeIsClicked){
-
-                addItemCount();
-                setClicked(Maitake);
-                MaitakeIsClicked = true;
-            } else {
-
-                minusItemCount();
-                setNotClicked(Maitake);
-                MaitakeIsClicked = false;
-            }
-        });
 
         //listener for adding item into db
         addBtn.setOnClickListener(v ->{
@@ -896,56 +731,7 @@ public class ingred_veg extends AppCompatActivity {
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
 
-                else if (Objects.equals(Ingredient[x], "Button") && buttonMSelected == 1) {
-                    getItemValue = buttonMSelected;
-                    getItemExpiry = buttonMDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Cremini") && creminiSelected == 1) {
-                    getItemValue = creminiSelected;
-                    getItemExpiry = creminiDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Portobello") && portobelloSelected == 1) {
-                    getItemValue = portobelloSelected;
-                    getItemExpiry = portobelloDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Shiitake") && shiitakeSelected == 1) {
-                    getItemValue = shiitakeSelected;
-                    getItemExpiry = shiitakeDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Oyster") && oysterSelected == 1) {
-                    getItemValue = oysterSelected;
-                    getItemExpiry = oysterDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Porcini") && porciniSelected == 1) {
-                    getItemValue = porciniSelected;
-                    getItemExpiry = porciniDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Morel") && morelSelected == 1) {
-                    getItemValue = morelSelected;
-                    getItemExpiry = morelDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Enoki") && enokiSelected == 1) {
-                    getItemValue = enokiSelected;
-                    getItemExpiry = enokiDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Chanterelle") && chanterelleSelected == 1) {
-                    getItemValue = chanterelleSelected;
-                    getItemExpiry = chanterelleDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
-                else if (Objects.equals(Ingredient[x], "Maitake") && maitakeSelected == 1) {
-                    getItemValue = maitakeSelected;
-                    getItemExpiry = maitakeDateExpiry;
-                    addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
-                }
+
 
 
             }
@@ -1152,65 +938,7 @@ public class ingred_veg extends AppCompatActivity {
             turnipSelected = 0;
         }
 
-        if (ButtonMIsClicked) {
-            buttonMSelected = 1;
-        } else {
-            buttonMSelected = 0;
-        }
 
-        if (CreminiIsClicked) {
-            creminiSelected = 1;
-        } else {
-            creminiSelected = 0;
-        }
-
-        if (PortobelloIsClicked) {
-            portobelloSelected = 1;
-        } else {
-            portobelloSelected = 0;
-        }
-
-        if (ShiitakeIsClicked) {
-            shiitakeSelected = 1;
-        } else {
-            shiitakeSelected = 0;
-        }
-
-        if (OysterIsClicked) {
-            oysterSelected = 1;
-        } else {
-            oysterSelected = 0;
-        }
-
-        if (PorciniIsClicked) {
-            porciniSelected= 1;
-        } else {
-            porciniSelected = 0;
-        }
-
-        if (MorelIsClicked) {
-            morelSelected = 1;
-        } else {
-            morelSelected = 0;
-        }
-
-        if (EnokiIsClicked) {
-            enokiSelected = 1;
-        } else {
-            enokiSelected = 0;
-        }
-
-        if (ChanterelleIsClicked) {
-            chanterelleSelected = 1;
-        } else {
-            chanterelleSelected = 0;
-        }
-
-        if (MaitakeIsClicked) {
-            maitakeSelected = 1;
-        } else {
-            maitakeSelected = 0;
-        }
 
         //TODO - Tambah item baru kat sini
     }
@@ -1237,7 +965,7 @@ public class ingred_veg extends AppCompatActivity {
         int basilExpiry = 10;
         int potatoExpiry = 30;
         int springOnionExpiry = 15;
-        int cayennePepperExpiry = 5;
+        int cayennePepperExpiry = 14;
         int asparagusExpiry = 10;
         int avocadoExpiry = 10;
         int cabbageExpiry = 5;
@@ -1251,16 +979,7 @@ public class ingred_veg extends AppCompatActivity {
         int pumpkinExpiry = 30;
         int swedeExpiry = 15;
         int turnipExpiry = 5;
-        int buttonExpiry = 14;
-        int creminiExpiry = 10;
-        int portobelloExpiry = 5;
-        int shiitakeExpiry = 7;
-        int oysterExpiry = 10;
-        int porciniExpiry = 300;
-        int morelExpiry = 5;
-        int enokiExpiry = 14;
-        int chanterelleExpiry = 7;
-        int maitakeExpiry = 10;
+
 
         //TODO - Tambah item baru kat sini
 
@@ -1300,16 +1019,7 @@ public class ingred_veg extends AppCompatActivity {
         LocalDateTime pumpkinDate = LocalDateTime.now().plusDays(pumpkinExpiry);
         LocalDateTime swedeDate = LocalDateTime.now().plusDays(swedeExpiry);
         LocalDateTime turnipDate = LocalDateTime.now().plusDays(turnipExpiry);
-        LocalDateTime buttonDate = LocalDateTime.now().plusDays(buttonExpiry);
-        LocalDateTime creminiDate = LocalDateTime.now().plusDays(creminiExpiry);
-        LocalDateTime portobelloDate = LocalDateTime.now().plusDays(portobelloExpiry);
-        LocalDateTime shiitakeDate = LocalDateTime.now().plusDays(shiitakeExpiry);
-        LocalDateTime oysterDate = LocalDateTime.now().plusDays(oysterExpiry);
-        LocalDateTime porciniDate = LocalDateTime.now().plusDays(porciniExpiry);
-        LocalDateTime morelDate = LocalDateTime.now().plusDays(morelExpiry);
-        LocalDateTime enokiDate = LocalDateTime.now().plusDays(enokiExpiry);
-        LocalDateTime chanterelleDate = LocalDateTime.now().plusDays(chanterelleExpiry);
-        LocalDateTime maitakeDate = LocalDateTime.now().plusDays(maitakeExpiry);
+
 
         //set the date as string
 
@@ -1344,16 +1054,7 @@ public class ingred_veg extends AppCompatActivity {
         pumpkinDateExpiry = String.valueOf(dtf.format(pumpkinDate));
         swedeDateExpiry = String.valueOf(dtf.format(swedeDate));
         turnipDateExpiry = String.valueOf(dtf.format(turnipDate));
-        buttonMDateExpiry = String.valueOf(dtf.format(buttonDate));
-        creminiDateExpiry = String.valueOf(dtf.format(creminiDate));
-        portobelloDateExpiry = String.valueOf(dtf.format(portobelloDate));
-        shiitakeDateExpiry = String.valueOf(dtf.format(shiitakeDate));
-        oysterDateExpiry = String.valueOf(dtf.format(oysterDate));
-        porciniDateExpiry = String.valueOf(dtf.format(porciniDate));
-        morelDateExpiry = String.valueOf(dtf.format(morelDate));
-        enokiDateExpiry = String.valueOf(dtf.format(enokiDate));
-        chanterelleDateExpiry = String.valueOf(dtf.format(chanterelleDate));
-        maitakeDateExpiry = String.valueOf(dtf.format(maitakeDate));
+
 
         //TODO - Tambah item baru kat sini
     }

@@ -48,7 +48,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientVegetablesBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -78,7 +78,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientSeafoodBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -117,7 +117,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientNutsBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -147,7 +147,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientMushroomBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -185,7 +185,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientMeatSubBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -215,7 +215,7 @@
                         <LinearLayout
                             android:id="@+id/ingredientDairyBtn"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:gravity="center"

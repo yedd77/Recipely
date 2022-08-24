@@ -1,5 +1,8 @@
 package com.example.recipely;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -33,6 +36,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.EventListener;
+import java.util.Objects;
+import java.time.temporal.ChronoUnit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +53,7 @@ public class fridge extends Fragment {
     private DatabaseReference fridgeRef;
     private FirebaseAuth mAuth;
     private String currentUserID;
+    private LinearLayout expiryNote;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,9 +101,11 @@ public class fridge extends Fragment {
         // Inflate the layout for this fragment
         ingredientView = inflater.inflate(R.layout.fragment_fridge, container, false);
 
+        expiryNote = (LinearLayout) ingredientView.findViewById(R.id.expiryNote);
         HaveData = (ScrollView) ingredientView.findViewById(R.id.HaveData);
         noFridge = (LinearLayout) ingredientView.findViewById(R.id.noFridge);
 
+        expiryNote.setVisibility(View.GONE);
         HaveData.setVisibility(View.GONE);
         myIngredientList = (RecyclerView) ingredientView.findViewById(R.id.ingredientList);
         myIngredientList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -131,18 +139,25 @@ public class fridge extends Fragment {
 
         FirebaseRecyclerOptions<fridgeItem> options =
                 new FirebaseRecyclerOptions.Builder<fridgeItem>()
-                        .setQuery(fridgeRef , fridgeItem.class)
+                        .setQuery(fridgeRef.orderByChild("Expiry") , fridgeItem.class)
                         .build();
 
         FirebaseRecyclerAdapter<fridgeItem, fridgeViewHolder> adapter
                 = new FirebaseRecyclerAdapter<fridgeItem, fridgeViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull fridgeViewHolder holder, int position, @NonNull fridgeItem model) {
-                String itemExpiry = model.getExpiry();
                 String itemName = getRef(position).getKey();
 
+                LocalDate expiry = LocalDate.parse(model.getExpiry());
+                LocalDate today = LocalDate.now();
+                long dayDiff = DAYS.between(today, expiry);
+
+                if(dayDiff <= 7){
+                    holder.cardViewIngredient.setBackgroundColor(Color.parseColor("#FFD1D1"));
+                    expiryNote.setVisibility(View.VISIBLE);
+                }
                 holder.ingredName.setText(itemName);
-                holder.ingredExpiry.setText(itemExpiry);
+                holder.ingredExpiry.setText(dayDiff + " Days until expiry");
 
                 holder.deleteBtn.setOnClickListener(v ->{
                     fridgeRef.child(getRef(position).getKey()).removeValue();
@@ -179,14 +194,16 @@ public class fridge extends Fragment {
     public static class fridgeViewHolder extends RecyclerView.ViewHolder{
 
         TextView ingredName, ingredExpiry;
-        LinearLayout deleteBtn;
+        LinearLayout deleteBtn, cardViewIngredient;
 
         public fridgeViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
             ingredName = itemView.findViewById(R.id.itemName);
             ingredExpiry = itemView.findViewById(R.id.itemExpiry);
 
+            cardViewIngredient = itemView.findViewById(R.id.cardViewIngredient);
             //set button to delete an item
             deleteBtn = itemView.findViewById(R.id.deleteItem);
         }
