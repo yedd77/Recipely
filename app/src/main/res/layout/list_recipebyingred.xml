@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:drawableStart="@drawable/ic_baseline_no_food_24"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
@@ -67,7 +67,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/roboto"
                 android:maxLines="1"
@@ -76,6 +76,38 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:ignore="RtlCompat" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/viewMissedIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:maxLines="1"
+            android:textColor="@color/orange"
+            android:text="@string/view"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:id="@+id/missedIngredDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/missedText"
+                android:textColor="@color/orange"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/MissedIngredList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
