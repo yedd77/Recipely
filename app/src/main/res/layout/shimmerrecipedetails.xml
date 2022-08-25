@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="7">
+
+    <ImageView
+        android:id="@+id/recipeImageDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shimmerimg"
+        android:background="@drawable/shimmerbgcard"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:background="#dddddd"
+                android:layout_weight="1"
+                android:id="@+id/RecipeNameDetails"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto"/>
+
+            <LinearLayout
+                android:layout_weight="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/recipeSourceDetails"
+                    android:layout_width="100dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp"
+                    android:background="#dddddd"
+                    android:fontFamily="@font/roboto"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:layout_weight="0"
+                android:layout_gravity="">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/recipeServingDetails"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:gravity=""
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="15dp"
+                    android:background="#dddddd"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/recipeTimePreparedDetails"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="10dp"
+                    android:textSize="18sp"
+                    android:background="#dddddd"
+                    android:fontFamily="@font/roboto"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/recipeScoreDetails"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#dddddd"
+                    android:drawablePadding="15dp"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:background="#DDDDDD"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredient"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:textColor="@color/orange"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/IngredientListRecipeDetailsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0" />
+
+            <TextView
+                android:layout_weight="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instruction"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:textColor="@color/orange"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recipeAnalyzeInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

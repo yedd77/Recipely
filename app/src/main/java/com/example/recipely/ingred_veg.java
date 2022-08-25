@@ -3,6 +3,7 @@ package com.example.recipely;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -730,10 +731,6 @@ public class ingred_veg extends AppCompatActivity {
                     getItemExpiry = fennelDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-
-
-
-
             }
             Toast.makeText(this, "Item added into fridge", Toast.LENGTH_SHORT).show();
         });

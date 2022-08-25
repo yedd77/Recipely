@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Html;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,7 @@ import com.example.recipely.Listeners.RecipeDetailsListeners;
 import com.example.recipely.Listeners.instructionListener;
 import com.example.recipely.Models.InstructionResponse;
 import com.example.recipely.Models.RecipeDetailsResponse;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -30,10 +34,25 @@ public class RecipeDetails extends AppCompatActivity {
     recipeDetailsIngredientAdapter adapter;
     InstructionAdapter instructionAdapter;
 
+    LinearLayout recipeDetailsLoaded;
+    ShimmerFrameLayout recipeDetailsShimmer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_details);
+
+        recipeDetailsLoaded = findViewById(R.id.recipeDetailsLoaded);
+        recipeDetailsShimmer = findViewById(R.id.recipeDetailsShimmer);
+        recipeDetailsShimmer.startShimmer();
+        recipeDetailsLoaded.setVisibility(View.GONE);
+        Handler handler = new Handler();
+        handler.postDelayed(()->{
+            recipeDetailsShimmer.stopShimmer();
+            recipeDetailsShimmer.setVisibility(View.GONE);
+            recipeDetailsLoaded.setVisibility(View.VISIBLE);
+        },3000);
 
         id = Integer.parseInt(getIntent().getStringExtra("id"));
         findViewById();
