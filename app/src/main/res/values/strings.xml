@@ -186,6 +186,42 @@
     <string name="Tuna">Tuna</string>
     <string name="Trout">Trout</string>
 
+    <!--Fruits-->
+    <string name="banana">Banana</string>
+    <string name="Lemon">Lemon</string>
+    <string name="Peach">Peach</string>
+    <string name="BlackPlum">Black Plum</string>
+    <string name="Orange">Orange</string>
+    <string name="Apricot">Apricot</string>
+    <string name="DriedFruit">Dried Fruit</string>
+    <string name="RedPlum">Red Plum</string>
+    <string name="MixBerries">Mix Berries</string>
+    <string name="Blueberries">Blueberries</string>
+    <string name="Strawberries">Strawberries</string>
+    <string name="Fig">Fig</string>
+    <string name="Cantaloupe">Cantaloupe</string>
+    <string name="HoneydewMelon">Honeydew Melon</string>
+    <string name="Apple">Apple</string>
+    <string name="Pineapple">Pineapple</string>
+    <string name="Avocado">Avocado</string>
+    <string name="Blackberries">Blackberries</string>
+    <string name="Raspberries">Raspberries</string>
+    <string name="Mango">Mango</string>
+    <string name="Blackcurrant">Blackcurrant</string>
+    <string name="DateFruit">Date Fruit</string>
+    <string name="Durian">Durian</string>
+    <string name="Grapes">Grapes</string>
+    <string name="Guava">Guava</string>
+    <string name="Kiwi">Kiwi</string>
+    <string name="Lychee">Lychee</string>
+    <string name="Mangosteen">Mangosteen</string>
+    <string name="Papaya">Papaya</string>
+    <string name="Pear">Pear</string>
+    <string name="Watermelon">Watermelon</string>
+    <string name="DragonFruit">Dragon Fruit</string>
+    <string name="Prunes">Prunes</string>
+    <string name="Tamarind">Tamarind</string>
+
     <!--Add to ingredient function-->
     <string name="addItem">Add item into fridge</string>
     <string name="item">0 item</string>
@@ -193,6 +229,7 @@
     <string name="cantFind">Can\'t find your ingredient?</string>
     <string name="cantText">Your ingredient might currently added by our team for next update. Try send us feedback on what ingredient you want us to add next.</string>
     <string name="title_activity_vegetables_ingred">vegetables_ingred</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

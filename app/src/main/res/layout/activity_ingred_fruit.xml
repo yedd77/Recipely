@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ingred_fruit"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fruit"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FF5D36"
+        android:fontFamily="@font/roboto"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/VegetableTxt"
+        android:textSize="20sp"
+        android:fontFamily="@font/roboto"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/hintbg"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bulb"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint"
+            android:textSize="14sp"
+            android:textColor="#F18800"
+            android:textAlignment="viewStart"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemBanana"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/banana"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemLemon"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Lemon"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemPeach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Peach"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemBlackPlum"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/BlackPlum"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemOrange"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Orange"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemApricot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Apricot"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemDriedFruit"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DriedFruit"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemRedPlum"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RedPlum"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemMixBerries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/MixBerries"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemBlueberries"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Blueberries"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemStrawberries"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Strawberries"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemFig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Fig"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemCantaloupe"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Cantaloupe"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemHoneydewMelon"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/HoneydewMelon"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemApple"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Apple"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemPineapple"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Pineapple"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemAvocado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Avocado"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemBlackberries"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Blackberries"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemRaspberrie"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Raspberries"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemMango"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/Mango"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemBlackcurrant"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Blackcurrant"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemDateFruit"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DateFruit"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemDurian"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Durian"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemGrapes"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Grapes"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemGuava"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Guava"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemKiwi"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Kiwi"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemLychee"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Lychee"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemMangosteen"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Mangosteen"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemPapaya"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Papaya"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemPear"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Pear"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemWatermelon"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Watermelon"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemDragonFruit"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DragonFruit"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitItemPrunes"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Prunes"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+                <TextView
+                    android:id="@+id/fruitItemTamarind"
+                    android:background="@drawable/ingredient_itembg"
+                    android:elevation="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Tamarind"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+
+        android:baselineAligned="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="32dp"
+        android:paddingStart="32dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:weightSum="3"
+        android:background="@drawable/additembg">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="@string/addItem"/>
+
+            <TextView
+                android:id="@+id/itemCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:text="@string/item"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/addBtn"
+                android:background="@drawable/googlebtnbg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#FF5D36"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -280,38 +280,38 @@ public class ingred_mushroom extends AppCompatActivity {
                 int getItemValue = 0;
                 String getItemExpiry = "";
 
-                if (Objects.equals(Ingredient[x], "Shiitake") && ShiitakeSelected == 1) {
+                if (Objects.equals(Ingredient[x], "Shiitake Mushroom") && ShiitakeSelected == 1) {
                     getItemValue = ShiitakeSelected;
                     getItemExpiry = ShiitakeDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
 
                 }
-                else if (Objects.equals(Ingredient[x], "Cremini") && CreminiSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Cremini Mushroom") && CreminiSelected == 1) {
                     getItemValue = CreminiSelected;
                     getItemExpiry = CreminiDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Button") && ButtonSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Button Mushroom") && ButtonSelected == 1) {
                     getItemValue = ButtonSelected;
                     getItemExpiry = ButtonDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Brown") && BrownSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Brown Mushroom") && BrownSelected == 1) {
                     getItemValue = BrownSelected;
                     getItemExpiry = BrownDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Dried") && DriedSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Dried Mushroom") && DriedSelected == 1) {
                     getItemValue = DriedSelected;
                     getItemExpiry = DriedDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Oyster") && OysterSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Oyster Mushroom") && OysterSelected == 1) {
                     getItemValue = OysterSelected;
                     getItemExpiry = OysterDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Porcini") && PorciniSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Porcini Mushroom") && PorciniSelected == 1) {
                     getItemValue = PorciniSelected;
                     getItemExpiry = PorciniDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
@@ -326,22 +326,22 @@ public class ingred_mushroom extends AppCompatActivity {
                     getItemExpiry = BabyBellaDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "White") && WhiteSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "White Mushroom") && WhiteSelected == 1) {
                     getItemValue = WhiteSelected;
                     getItemExpiry = WhiteDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Canned") && CannedSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Canned Mushroom") && CannedSelected == 1) {
                     getItemValue = CannedSelected;
                     getItemExpiry = CannedDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Portobello Cap") && PortobelloCapSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Portobello Cap Mushroom") && PortobelloCapSelected == 1) {
                     getItemValue = PortobelloCapSelected;
                     getItemExpiry = PortobelloCapDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
-                else if (Objects.equals(Ingredient[x], "Chestnut") && ChestnutSelected == 1) {
+                else if (Objects.equals(Ingredient[x], "Chestnut Mushroom") && ChestnutSelected == 1) {
                     getItemValue = ChestnutSelected;
                     getItemExpiry = ChestnutDateExpiry;
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
@@ -447,10 +447,10 @@ public class ingred_mushroom extends AppCompatActivity {
 
         // set the number of days the ingredient is safe to use
         // expiry days is estimated if user store the ingredient in suitable places
-        int ShiitakeExpiry = 90;
-        int CreminiExpiry = 90;
-        int ButtonExpiry = 90;
-        int BrownExpiry = 90;
+        int ShiitakeExpiry = 14;
+        int CreminiExpiry = 7;
+        int ButtonExpiry = 14;
+        int BrownExpiry = 10;
         int DriedExpiry = 90;
         int OysterExpiry = 90;
         int PorciniExpiry = 90;

@@ -776,33 +776,33 @@ public class ingred_seafood extends AppCompatActivity {
 
         // set the number of days the ingredient is safe to use
         // expiry days is estimated if user store the ingredient in suitable places
-        int ArticCharExpiry = 90;
-        int BreamExpiry = 90;
-        int ClamsExpiry = 90;
-        int CodExpiry = 90;
-        int CrabExpiry = 90;
-        int CrayfishExpiry = 90;
-        int HakeExpiry = 90;
-        int HaddockExpiry = 90;
-        int HalibutExpiry = 90;
+        int ArticCharExpiry = 7;
+        int BreamExpiry = 4;
+        int ClamsExpiry = 2;
+        int CodExpiry = 2;
+        int CrabExpiry = 5;
+        int CrayfishExpiry = 2;
+        int HakeExpiry = 2;
+        int HaddockExpiry = 2;
+        int HalibutExpiry = 2;
         int MackerelExpiry = 90;
-        int LobsterExpiry = 90;
-        int MahiExpiry = 90;
-        int MonkfishExpiry = 90;
-        int OctopusExpiry = 90;
-        int OysterExpiry = 90;
-        int PlaiceExpiry = 90;
-        int PollackExpiry = 90;
-        int PrawnsExpiry = 90;
-        int SalmonExpiry = 90;
-        int SardineExpiry = 90;
-        int ScallopExpiry = 90;
-        int SeaweedExpiry = 90;
-        int ShrimpExpiry = 90;
-        int SquidExpiry = 90;
-        int SturgeonExpiry = 90;
-        int TunaExpiry = 90;
-        int TroutExpiry = 90;
+        int LobsterExpiry = 2;
+        int MahiExpiry = 4;
+        int MonkfishExpiry = 4;
+        int OctopusExpiry = 2;
+        int OysterExpiry = 2;
+        int PlaiceExpiry = 2;
+        int PollackExpiry = 2;
+        int PrawnsExpiry = 3;
+        int SalmonExpiry = 2;
+        int SardineExpiry = 2;
+        int ScallopExpiry = 2;
+        int SeaweedExpiry = 4;
+        int ShrimpExpiry = 2;
+        int SquidExpiry = 2;
+        int SturgeonExpiry = 10;
+        int TunaExpiry = 2;
+        int TroutExpiry = 2;
 
         //set date time formatter
         //DOCS: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
@@ -866,7 +866,6 @@ public class ingred_seafood extends AppCompatActivity {
         SturgeonDateExpiry = String.valueOf(dtf.format(SturgeonDate));
         TunaDateExpiry = String.valueOf(dtf.format(TunaDate));
         TroutDateExpiry = String.valueOf(dtf.format(TroutDate));
-
     }
 
     //update item counter when remove an item

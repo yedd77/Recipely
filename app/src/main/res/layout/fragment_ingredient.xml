@@ -226,12 +226,10 @@
                             android:layout_marginBottom="5dp"
                             android:padding="10dp"
                             android:background="@drawable/ingredientbg">
-
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:src="@drawable/dairy_products"/>
-
                             <TextView
 
                                 android:layout_width="wrap_content"
@@ -243,12 +241,35 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/find"
-                        android:layout_marginTop="30dp"
-                        android:layout_gravity="center"/>
+                    <LinearLayout
+                        android:id="@+id/ingredientFruitBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:elevation="3dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/ingredientbg">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/fruit"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/fruit"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -61,6 +61,7 @@ public class ingredient extends Fragment {
         LinearLayout ingredientMushroomBtn = (LinearLayout) view.findViewById(R.id.ingredientMushroomBtn);
         LinearLayout ingredientMeatSubBtn = (LinearLayout) view.findViewById(R.id.ingredientMeatSubBtn);
         LinearLayout ingredientDairyBtn = (LinearLayout) view.findViewById(R.id.ingredientDairyBtn);
+        LinearLayout ingredientFruitBtn = (LinearLayout) view.findViewById(R.id.ingredientFruitBtn);
 
         //listener for vegetable ingredient category
         vegetableBtn.setOnClickListener(v -> {
@@ -91,6 +92,11 @@ public class ingredient extends Fragment {
         ingredientDairyBtn.setOnClickListener(v ->{
             Intent dairyPage = new Intent(getActivity(), ingred_dairy.class);
             startActivity(dairyPage);
+        });
+
+        ingredientFruitBtn.setOnClickListener(v ->{
+            Intent fruitPage = new Intent(getActivity(), ingred_fruit.class);
+            startActivity(fruitPage);
         });
 
         return view;

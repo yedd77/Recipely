@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -33,9 +35,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.EventListener;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.time.temporal.ChronoUnit;
 
@@ -104,7 +109,6 @@ public class fridge extends Fragment {
         expiryNote = (LinearLayout) ingredientView.findViewById(R.id.expiryNote);
         HaveData = (ScrollView) ingredientView.findViewById(R.id.HaveData);
         noFridge = (LinearLayout) ingredientView.findViewById(R.id.noFridge);
-
         expiryNote.setVisibility(View.GONE);
         HaveData.setVisibility(View.GONE);
         myIngredientList = (RecyclerView) ingredientView.findViewById(R.id.ingredientList);
@@ -151,7 +155,6 @@ public class fridge extends Fragment {
                 LocalDate expiry = LocalDate.parse(model.getExpiry());
                 LocalDate today = LocalDate.now();
                 long dayDiff = DAYS.between(today, expiry);
-
                 if(dayDiff <= 7){
                     holder.cardViewIngredient.setBackgroundColor(Color.parseColor("#FFD1D1"));
                     expiryNote.setVisibility(View.VISIBLE);
@@ -160,20 +163,7 @@ public class fridge extends Fragment {
                 holder.ingredExpiry.setText(dayDiff + " Days until expiry");
 
                 holder.deleteBtn.setOnClickListener(v ->{
-                    fridgeRef.child(getRef(position).getKey()).removeValue();
-                    fridgeRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(!snapshot.exists()){
-                                HaveData.setVisibility(View.GONE);
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
+                    fridgeRef.child(itemName.toString()).removeValue();
                 });
             }
 
@@ -186,7 +176,6 @@ public class fridge extends Fragment {
                 return viewHolder;
             }
         };
-
         myIngredientList.setAdapter(adapter);
         adapter.startListening();
     }

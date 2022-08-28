@@ -6,13 +6,20 @@ public class fridgeItem {
     public String garlicDateExpiry, onionDateExpiry;
 
     private int Ingredient;
+    private String IngredientName;
     private String Expiry;
+    private Long ExpiryDate;
 
     public fridgeItem(){}
 
     public fridgeItem(int ingredient, String expiry) {
         Ingredient = ingredient;
         Expiry = expiry;
+    }
+
+    public fridgeItem(String IngredientName, Long ExpiryDate) {
+        this.IngredientName = IngredientName;
+        this.ExpiryDate = ExpiryDate;
     }
 
     public fridgeItem(int garlic, int onion, String garlicDateExpiry, String onionDateExpiry) {
@@ -68,5 +75,21 @@ public class fridgeItem {
 
     public void setExpiry(String expiry) {
         Expiry = expiry;
+    }
+
+    public String getIngredientName() {
+        return IngredientName;
+    }
+
+    public void setIngredientName(String ingredientName) {
+        IngredientName = ingredientName;
+    }
+
+    public Long getExpiryDate() {
+        return ExpiryDate;
+    }
+
+    public void setExpiryDate(Long expiryDate) {
+        ExpiryDate = expiryDate;
     }
 }
