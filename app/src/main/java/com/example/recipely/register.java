@@ -6,8 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,15 +81,38 @@ public class register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(register.this, "Account have been registered", Toast.LENGTH_SHORT).show();
+                                customToast("Successful", "Your account has been created", "Success");
                                 Intent loginPage = new Intent(register.this , LoginActivity.class);
                                 startActivity(loginPage);
                             } else {
-                                Toast.makeText(register.this, "Registration Error: " + task.getException(), Toast.LENGTH_SHORT).show();
+                                customToast("Unsuccessful", "Something went wrong, please try again", "Failure");
                             }
 
                         }
                     });
         }
+    }
+
+    private void customToast(String Title, String Desc, String status) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,(ViewGroup) findViewById(R.id.toast_root));
+
+        TextView ToastTitle = layout.findViewById(R.id.ToastTitle);
+        TextView ToastDesc = layout.findViewById(R.id.ToastDesc);
+        ImageView toastDraw = layout.findViewById(R.id.toastDraw);
+
+        if (status.equals("Success")){
+            toastDraw.setImageResource(R.drawable.symbol_successful);
+        } else if (status.equals("Failure")) {
+            toastDraw.setImageResource(R.drawable.symbol_error);
+        }
+        ToastTitle.setText(Title);
+        ToastDesc.setText(Desc);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM, 0, 100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+
+        toast.show();
     }
 }

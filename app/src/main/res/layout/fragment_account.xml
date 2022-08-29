@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/AccountFragment"
     tools:context=".account">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="10">
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@drawable/accountbg"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:weightSum="6"
-            android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Settings"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="32dp"
+            android:textStyle="bold"
+            android:textColor="#FF5D36"
+            android:fontFamily="@font/roboto"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo_name"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:id="@+id/emailAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/emailAddress"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="8"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/roboto"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/pencil" />
+        <TextView
+            android:id="@+id/emailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emailAddress"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/roboto"
+            android:textSize="16sp"/>
 
             <LinearLayout
+                android:background="@drawable/settingbg"
+                android:elevation="6dp"
                 android:id="@+id/AccountPage"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/acc"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"/>
                 <View
@@ -67,8 +71,8 @@
                     android:layout_weight="1"/>
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:src="@drawable/go"
                     android:layout_gravity="center"
                     android:layout_marginEnd="30dp"/>
@@ -76,16 +80,20 @@
 
             <LinearLayout
                 android:id="@+id/clearFridge"
+                android:elevation="8dp"
+                android:background="@drawable/settingbg"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/clear"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"/>
                 <View
@@ -94,25 +102,29 @@
                     android:layout_weight="1"/>
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:src="@drawable/go"
                     android:layout_gravity="center"
                     android:layout_marginEnd="30dp"/>
             </LinearLayout>
 
             <LinearLayout
+                android:background="@drawable/settingbg"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="8dp"
                 android:id="@+id/feedback"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/feedback"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"/>
                 <View
@@ -121,8 +133,8 @@
                     android:layout_weight="1"/>
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:src="@drawable/go"
                     android:layout_gravity="center"
                     android:layout_marginEnd="30dp"/>
@@ -136,13 +148,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="App Version: V1.1.010"
+                android:text="App Version: V1.2.001"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto"
                 android:textSize="12sp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
         </LinearLayout>
-    </LinearLayout>
-
 </FrameLayout>

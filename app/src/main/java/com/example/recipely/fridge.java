@@ -60,6 +60,8 @@ public class fridge extends Fragment {
     private String currentUserID;
     private LinearLayout expiryNote;
 
+    private SearchView search;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -113,7 +115,6 @@ public class fridge extends Fragment {
         HaveData.setVisibility(View.GONE);
         myIngredientList = (RecyclerView) ingredientView.findViewById(R.id.ingredientList);
         myIngredientList.setLayoutManager(new LinearLayoutManager(getContext()));
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
 

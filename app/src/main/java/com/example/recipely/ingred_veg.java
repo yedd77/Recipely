@@ -7,6 +7,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -732,7 +737,7 @@ public class ingred_veg extends AppCompatActivity {
                     addItemByIngredient(Ingredient[x], getItemValue, getItemExpiry);
                 }
             }
-            Toast.makeText(this, "Item added into fridge", Toast.LENGTH_SHORT).show();
+            customToast("Successful", "Item added into fridge", "Success");
         });
     }
 
@@ -1078,5 +1083,28 @@ public class ingred_veg extends AppCompatActivity {
     private void setClicked(TextView item) {
         item.setBackground(getResources().getDrawable(R.drawable.ingridient_itembg_clicked));
         item.setTextColor(getResources().getColor(R.color.white));
+    }
+
+    private void customToast(String Title, String Desc, String status) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,(ViewGroup) findViewById(R.id.toast_root));
+
+        TextView ToastTitle = layout.findViewById(R.id.ToastTitle);
+        TextView ToastDesc = layout.findViewById(R.id.ToastDesc);
+        ImageView toastDraw = layout.findViewById(R.id.toastDraw);
+
+        if (status.equals("Success")){
+            toastDraw.setImageResource(R.drawable.symbol_successful);
+        } else if (status.equals("Failure")) {
+            toastDraw.setImageResource(R.drawable.symbol_error);
+        }
+        ToastTitle.setText(Title);
+        ToastDesc.setText(Desc);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM, 0, 100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+
+        toast.show();
     }
 }

@@ -1,13 +1,16 @@
 package com.example.recipely;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 
 import org.w3c.dom.Text;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,20 +76,36 @@ public class account extends Fragment {
                              Bundle savedInstanceState) {
 
         String emailUser = "";
+        String usernameUser = "";
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_account, container, false);
         LinearLayout AccountPage = (LinearLayout) view.findViewById(R.id.AccountPage);
         LinearLayout clearFridge = (LinearLayout) view.findViewById(R.id.clearFridge);
         LinearLayout feedback = (LinearLayout) view.findViewById(R.id.feedback);
+        TextView username = (TextView) view.findViewById(R.id.username);
 
         //set user email on page
         user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
         for (UserInfo profile : user.getProviderData()){
             emailUser = profile.getEmail();
+            usernameUser = profile.getDisplayName();
         }
         TextView email = (TextView) view.findViewById(R.id.emailAddress);
         email.setText(emailUser);
+
+        //set user username on page
+        if (!Objects.equals(usernameUser, "")){
+            username.setText(usernameUser);
+        } else {
+            username.setText("Set username");
+        }
+
+        username.setOnClickListener(v ->{
+            Intent myAccountPage = new Intent(getActivity(), Account_account_node.class);
+            startActivity(myAccountPage);
+        });
 
         //Intent to account page
         AccountPage.setOnClickListener(v ->{

@@ -11,11 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.recipely.Adapters.RandomRecipeAdapter;
@@ -167,7 +170,7 @@ public class home extends Fragment {
         }
         @Override
         public void didError(String message) {
-            Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+            customToast("Unsuccessful", message, "Failure");
         }
     };
 
@@ -183,7 +186,7 @@ public class home extends Fragment {
 
         @Override
         public void didError(String message) {
-            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+            customToast("Unsuccessful", message, "Failure");
         }
     };
 
@@ -195,4 +198,27 @@ public class home extends Fragment {
 
         }
     };
+
+    private void customToast(String Title, String Desc, String status) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,(ViewGroup) getView().findViewById(R.id.toast_root));
+
+        TextView ToastTitle = layout.findViewById(R.id.ToastTitle);
+        TextView ToastDesc = layout.findViewById(R.id.ToastDesc);
+        ImageView toastDraw = layout.findViewById(R.id.toastDraw);
+
+        if (status.equals("Success")){
+            toastDraw.setImageResource(R.drawable.symbol_successful);
+        } else if (status.equals("Failure")) {
+            toastDraw.setImageResource(R.drawable.symbol_error);
+        }
+        ToastTitle.setText(Title);
+        ToastDesc.setText(Desc);
+        Toast toast = new Toast(getContext());
+        toast.setGravity(Gravity.BOTTOM, 0, 100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+
+        toast.show();
+    }
 }
