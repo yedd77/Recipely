@@ -156,13 +156,28 @@ public class fridge extends Fragment {
                 LocalDate expiry = LocalDate.parse(model.getExpiry());
                 LocalDate today = LocalDate.now();
                 long dayDiff = DAYS.between(today, expiry);
-                if(dayDiff <= 7){
-                    holder.cardViewIngredient.setBackgroundColor(Color.parseColor("#FFD1D1"));
-                    expiryNote.setVisibility(View.VISIBLE);
-                }
-                holder.ingredName.setText(itemName);
-                holder.ingredExpiry.setText(dayDiff + " Days until expiry");
+                String expiryText = "";
 
+                //check the expiry date of an ingredient saved by the user
+                if(dayDiff <= 7 && dayDiff > 0){
+
+                    holder.cardViewIngredient.setBackgroundColor(Color.parseColor("#FFD1D1"));
+                    expiryText = dayDiff + " Days until expiry";
+                    setName(holder, itemName, expiryText);
+
+                }else if(dayDiff <= 0){
+
+                    holder.cardViewIngredient.setBackgroundColor(Color.parseColor("#CCCCCC"));
+                    expiryNote.setVisibility(View.VISIBLE);
+                    expiryText = "Expired";
+                    setName(holder, itemName, expiryText);
+                } else {
+
+                    expiryText = dayDiff + " Days until expiry";
+                    setName(holder, itemName, expiryText);
+                }
+
+                //listener for delete icon to remove an ingredient
                 holder.deleteBtn.setOnClickListener(v ->{
                     fridgeRef.child(itemName.toString()).removeValue();
                 });
@@ -181,6 +196,12 @@ public class fridge extends Fragment {
         adapter.startListening();
     }
 
+    //method to set properties for ingredient list Recycle View
+    private void setName(fridgeViewHolder holder, String itemName, String expiryText) {
+        holder.ingredName.setText(itemName);
+        holder.ingredExpiry.setText(expiryText);
+    }
+
     public static class fridgeViewHolder extends RecyclerView.ViewHolder{
 
         TextView ingredName, ingredExpiry;
@@ -188,13 +209,9 @@ public class fridge extends Fragment {
 
         public fridgeViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
             ingredName = itemView.findViewById(R.id.itemName);
             ingredExpiry = itemView.findViewById(R.id.itemExpiry);
-
             cardViewIngredient = itemView.findViewById(R.id.cardViewIngredient);
-            //set button to delete an item
             deleteBtn = itemView.findViewById(R.id.deleteItem);
         }
     }
